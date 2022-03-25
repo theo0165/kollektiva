@@ -27,18 +27,16 @@ export default async function handler(req, res) {
     return;
   }
 
-  let { user, error } = await supabase.auth.signUp({ email, password });
+  const { user, error } = await supabase.auth.signIn({ email, password });
 
   if (error) {
-    errors.push(error.message);
-
-    res.status(401).json({
-      code: 401,
-      errors,
+    res.status(400).json({
+      code: 400,
+      error: error.message,
     });
 
     return;
   }
 
-  res.json(user);
+  res.json({ code: 200, user });
 }
