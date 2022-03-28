@@ -1,4 +1,4 @@
-import { supabase } from "../../utils/initSupabase.js";
+import { supabase } from "../../../utils/initSupabase.js";
 import isEmail from "validator/lib/isEmail";
 import isEmpty from "validator/lib/isEmpty";
 
@@ -37,6 +37,8 @@ export default async function handler(req, res) {
 
     return;
   }
+
+  //await supabase.auth.api.setAuthCookie(req, res);
 
   res.json({ code: 200, user });
 }

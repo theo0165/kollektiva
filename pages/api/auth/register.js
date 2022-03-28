@@ -1,4 +1,4 @@
-import { supabase } from "../../utils/initSupabase.js";
+import { supabase } from "../../../utils/initSupabase.js";
 import isEmail from "validator/lib/isEmail";
 import isEmpty from "validator/lib/isEmpty";
 
