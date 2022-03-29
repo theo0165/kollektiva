@@ -4,7 +4,7 @@ export default function LocationSelection() {
     <>
       <h1>Vart finns bostaden</h1>
       <div>
-        <label htmlFor="address">Sök efter din address</label>
+        <label htmlhtmlFor="address">Sök efter din address</label>
         <input type="text" placeholder="Gatan 1, 123 45 Staden"></input>
       </div>
     </>
