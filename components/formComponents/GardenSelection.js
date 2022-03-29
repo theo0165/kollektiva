@@ -4,7 +4,7 @@ export default function GardenSelection() {
     <div>
       <h1>Har bostaden trädgård?</h1>
       <div className="radio-buttons">
-        <input type="radio" id="yes" name="garden" value="yes" checked />
+        <input type="radio" id="yes" name="garden" value="yes" />
         <label htmlFor="yes">Möblerad</label>
         <input type="radio" id="no" name="garden" value="no" />
       </div>

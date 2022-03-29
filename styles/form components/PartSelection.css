@@ -4,6 +4,6 @@ input {
   width: 0;
 }
 
-input:checked + label {
+input: + label {
   color: red;
 }

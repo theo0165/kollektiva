@@ -9,7 +9,6 @@ export default function FurnitureSelection() {
           id="fullyFurnished"
           name="furniture"
           value="fullyFurnished"
-          checked
         />
         <label htmlFor="fullyFurnished">Möblerad</label>
         <input

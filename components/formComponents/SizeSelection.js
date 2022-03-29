@@ -23,7 +23,7 @@ export default function SizeSelection() {
       <label htmlFor="size">Kvadratmeter</label>
       <div className="radio-buttons">
         <label htmlFor="sizeOne">1</label>
-        <input type="radio" id="sizeOne" name="people" value="1" checked />
+        <input type="radio" id="sizeOne" name="people" value="1" />
         <label htmlFor="sizeTwo">2</label>
         <input type="radio" id="SizeTwo" name="people" value="2" />
         <label htmlFor="sizeThree">3</label>
