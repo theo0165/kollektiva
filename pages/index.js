@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Signup from "../components/Signup";
+import Signup from "../components/formComponents/NewResidence";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
