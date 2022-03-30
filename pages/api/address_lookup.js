@@ -13,11 +13,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const reqUrl =
-    baseUrl +
-    encodeURI(
-      `?query=${query}&country=SE&limit=1&access_key=${process.env.POSITIONSTACK_APIKEY}`
-    );
+  const reqUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${query}&key=${process.env.GOOGLE_API_KEY}`;
 
   const request = await fetch(reqUrl);
   const response = await request.json();
@@ -28,10 +24,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  res.json({
-    latitude: response.data[0].latitude,
-    longitude: response.data[0].longitude,
-  });
+  console.log(response);
+
+  res.json(response);
 
   return;
 }

@@ -15,7 +15,7 @@ export default function Map({ latitude, longitude }) {
 
   return (
     <>
-      {hasChoosenAddress ? "Choosen address" : "Not choosen address"}
+      {console.log("in component", latitude, longitude)}
       <MapContainer
         center={[latitude ?? defaultLat, longitude ?? defaultLon]}
         zoom={hasChoosenAddress ? 13 : 5}
