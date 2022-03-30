@@ -1,5 +1,5 @@
 // step 9 choose how your rental is heated (central, electric, gas etc)
-export default function HeatingSelection() {
+export default function HeatingSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Hur värms bostaden upp?</h1>

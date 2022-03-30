@@ -1,5 +1,6 @@
 // step 7 choose how the rental is decorated (fully, partially, none)
-export default function FurnitureSelection() {
+
+export default function FurnitureSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Hur hyrs bostaden ut?</h1>
