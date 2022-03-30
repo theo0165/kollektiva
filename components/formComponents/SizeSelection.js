@@ -8,8 +8,8 @@ export default function SizeSelection() {
         min="1"
         max="15"
         id="rooms"
-        name="SizeSelection"
-        value="Villa"
+        name="rooms"
+        value="rooms"
       />
       <label htmlFor="rooms">Antal rum</label>
       <input
@@ -17,8 +17,8 @@ export default function SizeSelection() {
         min="1"
         max="1000"
         id="size"
-        name="SizeSelection"
-        value="kvadratmeter"
+        name="size"
+        value="size"
       />
       <label htmlFor="size">Kvadratmeter</label>
       <div className="radio-buttons">

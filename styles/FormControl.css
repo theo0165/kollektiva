@@ -1,0 +1,19 @@
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border-radius: 20%;
+  padding: 2rem;
+}
+
+.back {
+  background-color: white;
+  color: black;
+}
+
+.next {
+  background-color: #000aff;
+  color: white;
+}

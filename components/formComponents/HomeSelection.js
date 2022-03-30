@@ -4,13 +4,13 @@ export default function HomeSelection() {
     <div>
       <h1>Vilken typ av boende vill du hyra ut? </h1>
       <div className="radio-buttons">
-        <input type="radio" id="villa" name="villa" value="villa" />
+        <input type="radio" id="villa" name="type" value="villa" />
         <label htmlFor="villa">Villa</label>
-        <input type="radio" id="stuga" name="stuga" value="stuga" />
+        <input type="radio" id="stuga" name="type" value="stuga" />
         <label htmlFor="stuga">Stuga</label>
-        <input type="radio" id="radhus" name="radhus" value="radhus" />
+        <input type="radio" id="radhus" name="type" value="radhus" />
         <label htmlFor="radhus">Radhus</label>
-        <input type="radio" id="parhus" name="parhus" value="parhus" />
+        <input type="radio" id="parhus" name="type" value="parhus" />
         <label htmlFor="parhus">Parhus</label>
       </div>
     </div>
