@@ -9,23 +9,22 @@ export default function FurnitureSelection() {
           id="fullyFurnished"
           name="furniture"
           value="fullyFurnished"
-          checked
         />
-        <label for="fullyFurnished">Möblerad</label>
+        <label htmlFor="fullyFurnished">Möblerad</label>
         <input
           type="radio"
           id="partiallyFurnished"
           name="furniture"
           value="partiallyFurnished"
         />
-        <label for="partiallyFurnished">Delvis möblerad</label>
+        <label htmlFor="partiallyFurnished">Delvis möblerad</label>
         <input
           type="radio"
           id="unFurnished"
           name="furniture"
           value="unFurnished"
         />
-        <label for="unFurnished">Omöblerad</label>
+        <label htmlFor="unFurnished">Omöblerad</label>
       </div>
     </div>
   );

@@ -4,11 +4,11 @@ export default function PartSelection() {
     <div>
       <h1>Jag vill hyra ut: </h1>
       <div className="radio-buttons">
-        <input type="radio" id="partOne" name="whole" value="whole" checked />
-        <label for="partOne">Hela min bostad</label>
+        <input type="radio" id="partOne" name="rent" value="whole" />
+        <label htmlFor="partOne">Hela min bostad</label>
         <p>Eller</p>
-        <input type="radio" id="partTwo" name="part" value="part" />
-        <label for="partTwo">En del av min bostad</label>
+        <input type="radio" id="partTwo" name="rent" value="part" />
+        <label htmlFor="partTwo">En del av min bostad</label>
       </div>
     </div>
   );
