@@ -9,6 +9,8 @@ export default function FurnitureSelection() {
           id="fullyFurnished"
           name="furniture"
           value="fullyFurnished"
+          onChange={handleChange("furniture")}
+          checked={state.furniture === "fullyFurnished" ? true : false}
         />
         <label htmlFor="fullyFurnished">Möblerad</label>
         <input
@@ -16,6 +18,8 @@ export default function FurnitureSelection() {
           id="partiallyFurnished"
           name="furniture"
           value="partiallyFurnished"
+          onChange={handleChange("furniture")}
+          checked={state.furniture === "partiallyFurnished" ? true : false}
         />
         <label htmlFor="partiallyFurnished">Delvis möblerad</label>
         <input
@@ -23,6 +27,8 @@ export default function FurnitureSelection() {
           id="unFurnished"
           name="furniture"
           value="unFurnished"
+          onChange={handleChange("furniture")}
+          checked={state.furniture === "unFurnished" ? true : false}
         />
         <label htmlFor="unFurnished">Omöblerad</label>
       </div>
