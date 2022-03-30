@@ -1,5 +1,5 @@
 //step 8 choose whether or not your rental has a garden
-export default function GardenSelection() {
+export default function GardenSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Har bostaden trädgård?</h1>

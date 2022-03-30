@@ -1,5 +1,5 @@
 //step 6 choose the amount of time you wish to rent out your house
-export default function TimeSelection() {
+export default function TimeSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Hur länge vill du hyra ut bostaden?</h1>

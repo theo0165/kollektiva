@@ -1,5 +1,5 @@
 // step 3, choose what kind of home you want to rent out (house, cabin etc)
-export default function HomeSelection() {
+export default function HomeSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Vilken typ av boende vill du hyra ut? </h1>

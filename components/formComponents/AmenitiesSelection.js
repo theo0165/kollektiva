@@ -1,5 +1,5 @@
 // step 10 choose what amenities are included (balcony, elevator, air condition, washer, dryer, dishwasher, bathtub, parking, fireplace, internet)
-export default function AmenitiesSelection() {
+export default function AmenitiesSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Vilka bekvämligheter finns i bostaden?</h1>
