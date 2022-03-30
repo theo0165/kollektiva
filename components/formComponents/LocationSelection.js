@@ -10,6 +10,7 @@ export default function LocationSelection() {
     const value = e.target.value;
 
     if (value.length < 10) {
+      setAddress(null);
       return;
     }
 
