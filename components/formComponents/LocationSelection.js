@@ -2,8 +2,8 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 //step 5 choose where in the country the rental is located
-export default function LocationSelection() {
-  const [address, setAddress] = useState(null);
+export default function LocationSelection({ state, handleChange, setState }) {
+  const [address, setAddress] = useState(state.address);
   const Map = dynamic(() => import("../Map"), { ssr: false });
 
   const handleInputChange = async (e) => {
@@ -20,6 +20,7 @@ export default function LocationSelection() {
     }
 
     setAddress(value);
+    setState({ ...state, ["address"]: value });
   };
 
   return (
@@ -32,7 +33,8 @@ export default function LocationSelection() {
           name="address"
           id="address"
           placeholder="Gatan 1, 123 45 Staden"
-          onChange={(e) => handleInputChange(e)}
+          onChange={handleInputChange}
+          defaultValue={state.address}
         ></input>
       </div>
       <Map address={address} />

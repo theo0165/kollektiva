@@ -3,6 +3,17 @@ import { useState } from "react";
 
 import PartSelection from "./PartSelection";
 import HomeSelection from "./Homeselection";
+import SizeSelection from "./SizeSelection";
+import LocationSelection from "./LocationSelection";
+import TimeSelection from "./TimeSelection";
+import FurnitureSelection from "./FurnitureSelection";
+import GardenSelection from "./GardenSelection";
+import HeatingSelection from "./HeatingSelection";
+import AmenitiesSelection from "./AmenitiesSelection";
+import PictureSelection from "./PictureSelection";
+import Preview from "./Preview";
+import Success from "./Success";
+import RestrictionSelection from "./RestrictionSelection";
 
 export default function NewResidence({ step, nextStep, prevStep }) {
   const [state, setState] = useState({
@@ -33,11 +44,9 @@ export default function NewResidence({ step, nextStep, prevStep }) {
 
   // handle field change
   const handleChange = (input) => (e) => {
+    console.log(e, input);
     setState({ ...state, [input]: e.target.value });
   };
-
-  const { firstName, lastName, email, password } = state;
-  const values = { firstName, lastName, email, password };
 
   switch (step) {
     case 1:
@@ -47,7 +56,13 @@ export default function NewResidence({ step, nextStep, prevStep }) {
     case 3:
       return <SizeSelection state={state} handleChange={handleChange} />;
     case 4:
-      return <LocationSelection state={state} handleChange={handleChange} />;
+      return (
+        <LocationSelection
+          state={state}
+          handleChange={handleChange}
+          setState={setState}
+        />
+      );
     case 5:
       return <TimeSelection state={state} handleChange={handleChange} />;
     case 6:

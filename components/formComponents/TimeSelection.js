@@ -10,9 +10,7 @@ export default function TimeSelection() {
         <label htmlFor="timeEnd">Hyr ut till:</label>
       </div>
       <h3>Uhyrningsperiod: </h3>
-      <p>
-        Från {timeStart} till {timeEnd}
-      </p>
+      <p>{/* Från {timeStart} till {timeEnd} */}</p>
     </div>
   );
 }
