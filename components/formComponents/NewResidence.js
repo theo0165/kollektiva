@@ -4,25 +4,36 @@ import { useState } from "react";
 import PartSelection from "./PartSelection";
 import HomeSelection from "./Homeselection";
 
-export default function NewResidence() {
+export default function NewResidence({ step, nextStep, prevStep }) {
   const [state, setState] = useState({
-    step: 1,
+    rent: "",
+    type: "",
+    rooms: "",
+    size: "",
+    people: "",
+    address: "",
+    timeStart: "",
+    timeEnd: "",
+    furniture: "",
+    garden: "",
+    gardenEquipment: "",
+    heat: "",
+    balcony: "",
+    elevator: "",
+    air: "",
+    dishWasher: "",
+    washingMachine: "",
+    dryer: "",
+    bathTub: "",
+    garage: "",
+    parking: "",
+    furnace: "",
+    internet: "",
   });
-
-  const [step, setStep] = useState(1);
-  // go back to previous step
-  const prevStep = () => {
-    setStep(step - 1);
-  };
-
-  // proceed to the next step
-  const nextStep = () => {
-    setState(step + 1);
-  };
 
   // handle field change
   const handleChange = (input) => (e) => {
-    setState({ [input]: e.target.value });
+    setState({ ...state, [input]: e.target.value });
   };
 
   const { firstName, lastName, email, password } = state;
@@ -30,31 +41,31 @@ export default function NewResidence() {
 
   switch (step) {
     case 1:
-      return <PartSelection />;
+      return <PartSelection state={state} handleChange={handleChange} />;
     case 2:
-      return <HomeSelection />;
+      return <HomeSelection state={state} handleChange={handleChange} />;
     case 3:
-      return <SizeSelection />;
+      return <SizeSelection state={state} handleChange={handleChange} />;
     case 4:
-      return <LocationSelection />;
+      return <LocationSelection state={state} handleChange={handleChange} />;
     case 5:
-      return <TimeSelection />;
+      return <TimeSelection state={state} handleChange={handleChange} />;
     case 6:
-      return <FurnitureSelection />;
+      return <FurnitureSelection state={state} handleChange={handleChange} />;
     case 7:
-      return <GardenSelection />;
+      return <GardenSelection state={state} handleChange={handleChange} />;
     case 8:
-      return <HeatingSelection />;
+      return <HeatingSelection state={state} handleChange={handleChange} />;
     case 9:
-      return <AmenitiesSelection />;
+      return <AmenitiesSelection state={state} handleChange={handleChange} />;
     case 10:
-      return <PictureSelection />;
+      return <PictureSelection state={state} handleChange={handleChange} />;
     case 11:
-      return <Preview />;
+      return <Preview state={state} handleChange={handleChange} />;
     case 12:
-      return <RestrictionSelection />;
+      return <RestrictionSelection state={state} handleChange={handleChange} />;
     case 13:
-      return <Success />;
+      return <Success state={state} handleChange={handleChange} />;
     default:
   }
 }

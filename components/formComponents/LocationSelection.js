@@ -29,6 +29,8 @@ export default function LocationSelection() {
         <label htmlFor="address">Sök efter din address</label>
         <input
           type="text"
+          name="address"
+          id="address"
           placeholder="Gatan 1, 123 45 Staden"
           onChange={(e) => handleInputChange(e)}
         ></input>
