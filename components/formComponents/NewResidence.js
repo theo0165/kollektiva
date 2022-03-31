@@ -44,7 +44,6 @@ export default function NewResidence({ step, nextStep, prevStep }) {
 
   // handle field change
   const handleChange = (input) => (e) => {
-    console.log(e, input);
     setState({ ...state, [input]: e.target.value });
   };
 

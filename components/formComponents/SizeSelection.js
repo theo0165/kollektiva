@@ -11,7 +11,7 @@ export default function SizeSelection({ state, handleChange }) {
         id="rooms"
         name="rooms"
         onChange={handleChange("rooms")}
-        value={state.rooms}
+        defaultValue={state.rooms}
       />
       <label htmlFor="rooms">Antal rum</label>
       <input
@@ -21,7 +21,7 @@ export default function SizeSelection({ state, handleChange }) {
         id="size"
         name="size"
         onChange={handleChange("size")}
-        value={state.size}
+        defaultValue={state.size}
       />
       <label htmlFor="size">Kvadratmeter</label>
       <div className="radio-buttons">
