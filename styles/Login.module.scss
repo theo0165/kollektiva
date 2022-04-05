@@ -1,5 +1,16 @@
 @import "./variables/variables.scss";
 
+.container {
+  margin-bottom: 220px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: $primaryBlue;
+  text-align: center;
+}
+
 .logo a {
   display: inline-block;
 }
@@ -40,7 +51,7 @@
 }
 
 .createAccountCta {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/initSupabase";
 import styles from "../styles/Login.module.scss";
@@ -58,8 +57,8 @@ export default function Login() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
-      <Header />
+    <div className={styles.container}>
+      <h1 className={styles.title}>Login</h1>
       <form className="form-container">
         <div className="input-container">
           <label className="form-label">E-post</label>
