@@ -3,8 +3,10 @@ import { supabase } from "../utils/initSupabase";
 import styles from "../styles/Login.module.scss";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { useRouter } from "next/router";
 
 export default function Login() {
+  const router = useRouter();
   const [user, setUser] = useState(supabase.auth.user() || null);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -25,6 +27,10 @@ export default function Login() {
 
       setUser(supabase.auth.user() || null);
     });
+
+    if (user) {
+      router.push("/");
+    }
   }, []);
 
   const handleLogin = async () => {
@@ -66,6 +72,7 @@ export default function Login() {
             type="email"
             placeholder="me@example.com"
             className="form-control"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="input-container">
@@ -74,9 +81,18 @@ export default function Login() {
             type="password"
             placeholder="********"
             className="form-control"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className={styles.submit + " btn btn-primary"}>Logga in</button>
+        <button
+          className={styles.submit + " btn btn-primary"}
+          onClick={(e) => {
+            e.preventDefault();
+            handleLogin();
+          }}
+        >
+          Logga in
+        </button>
       </form>
       <a href="#" className={styles.forgotLink}>
         Glömt lösenord?

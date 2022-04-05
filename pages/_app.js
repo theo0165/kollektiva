@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <div class="container">
+      <div className="container">
         <Component {...pageProps} />
       </div>
     </>
