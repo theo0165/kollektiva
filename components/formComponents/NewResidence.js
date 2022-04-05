@@ -75,10 +75,12 @@ export default function NewResidence({ step, nextStep, prevStep }) {
     case 10:
       return <PictureSelection state={state} handleChange={handleChange} />;
     case 11:
-      return <Preview state={state} handleChange={handleChange} />;
+      return <PrizeSelection state={state} handleChange={handleChange} />;
     case 12:
       return <RestrictionSelection state={state} handleChange={handleChange} />;
     case 13:
+      return <Preview state={state} handleChange={handleChange} />;
+    case 14:
       return <Success state={state} handleChange={handleChange} />;
     default:
   }

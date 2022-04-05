@@ -4,9 +4,21 @@ export default function TimeSelection({ state, handleChange }) {
     <div>
       <h1>Hur länge vill du hyra ut bostaden?</h1>
       <div className="date-inputs">
-        <input type="date" id="timeStart" name="timeStart" />
+        <input
+          type="date"
+          id="timeStart"
+          name="timeStart"
+          onChange={handleChange("timeStart")}
+          checked={state.timeStart}
+        />
         <label htmlFor="timeStart">Hyr ut från:</label>
-        <input type="date" id="timeEnd" name="timeEnd" />
+        <input
+          type="date"
+          id="timeEnd"
+          name="timeEnd"
+          onChange={handleChange("timeEnd")}
+          checked={state.timeEnd}
+        />
         <label htmlFor="timeEnd">Hyr ut till:</label>
       </div>
       <h3>Uhyrningsperiod: </h3>
