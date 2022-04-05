@@ -24,7 +24,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="men"
           value="men"
           onChange={handleChange("men")}
-          checked={state.men}
+          checked={state.men === "men" ? true : false}
         />
         <label htmlFor="men">Män</label>
         <input
@@ -33,7 +33,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="women"
           value="women"
           onChange={handleChange("women")}
-          checked={state.women}
+          checked={state.women === "women" ? true : false}
         />
         <label htmlFor="women">Kvinnor</label>
         <input
@@ -42,7 +42,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="nonBinary"
           value="nonBinary"
           onChange={handleChange("nonBinary")}
-          checked={state.nonBinary}
+          checked={state.nonBinary === "nonBinary" ? true : false}
         />
         <label htmlFor="nonBinary">Ickebinära</label>
       </div>
@@ -54,7 +54,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="petsYes"
           value="petsYes"
           onChange={handleChange("petsYes")}
-          checked={state.petsYes}
+          checked={state.petsYes === "petsYes" ? true : false}
         />
         <label htmlFor="petsYes">Ja</label>
         <input
@@ -63,7 +63,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="petsNo"
           value="petsNo"
           onChange={handleChange("petsNo")}
-          checked={state.petsNo}
+          checked={state.petsNo === "petsNo" ? true : false}
         />
         <label htmlFor="petsNo">Nej</label>
       </div>
@@ -74,7 +74,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="smokingYes"
           value="smokingYes"
           onChange={handleChange("smokingYes")}
-          checked={state.smokingYes}
+          checked={state.smokingYes === "smokingYes" ? true : false}
         />
         <label htmlFor="smokingYes">Ja</label>
         <input
@@ -83,7 +83,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           name="smokingNo"
           value="smokingNo"
           onChange={handleChange("smokingNo")}
-          checked={state.smokingNo}
+          checked={state.smokingNo === "smokingNo" ? true : false}
         />
         <label htmlFor="smokingNo">Nej</label>
       </div>
