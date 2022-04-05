@@ -1,7 +1,9 @@
+import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/initSupabase";
-import styles from "../styles/Login.module.css";
-import logo from "../assets/logo.svg";
+import styles from "../styles/Login.module.scss";
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 export default function Login() {
   const [user, setUser] = useState(supabase.auth.user() || null);
@@ -57,9 +59,7 @@ export default function Login() {
 
   return (
     <div>
-      <div className={styles.logo}>
-        <img src={logo.src} />
-      </div>
+      <Header />
       <form className="form-container">
         <div className="input-container">
           <label className="form-label">E-post</label>
@@ -71,14 +71,33 @@ export default function Login() {
         </div>
         <div className="input-container">
           <label className="form-label">Lösenord</label>
-          <input type="password" className="form-control" />
+          <input
+            type="password"
+            placeholder="********"
+            className="form-control"
+          />
         </div>
-        <button className="btn btn-primary">Logga in</button>
+        <button className={styles.submit + " btn btn-primary"}>Logga in</button>
       </form>
-      <a href="#">Glömt lösenord?</a>
+      <a href="#" className={styles.forgotLink}>
+        Glömt lösenord?
+      </a>
       <div>
-        <p>Eller logga in med:</p>
-        <div></div>
+        <p className={styles.center}>Eller logga in med:</p>
+        <div className={styles.loginMethods}>
+          <button className={styles.loginMethodBtn + " btn"}>
+            <FaFacebook color="#23449b" size="25px" />
+            Facebook
+          </button>
+          <button className={styles.loginMethodBtn + " btn"}>
+            <FcGoogle size="25px" />
+            Google
+          </button>
+        </div>
+      </div>
+      <div className={styles.createAccountCta}>
+        <p>Första gången här? Kom igång!</p>
+        <button className="btn">Skapa konto</button>
       </div>
     </div>
   );

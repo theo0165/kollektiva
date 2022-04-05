@@ -1,0 +1,64 @@
+@import "./variables/variables.scss";
+
+.logo a {
+  display: inline-block;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.forgotLink {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.center {
+  text-align: center;
+  font-size: 20px;
+}
+
+.loginMethods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 16px;
+}
+
+.loginMethodBtn {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $secondaryWhite;
+}
+
+.loginMethodBtn svg {
+  margin-right: 10px;
+}
+
+.createAccountCta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 24px 0;
+  background: $secondaryWhite;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.createAccountCta button {
+  background: $utilitySuccess;
+  color: $secondaryWhite;
+  padding: 12.5px 18px;
+}
+
+.createAccountCta p {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 16px 0;
+}
