@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { supabase } from "../utils/initSupabase";
 import styles from "../styles/Login.module.scss";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useRouter } from "next/router";
 
 export default function Login() {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState(supabase.auth.user() || null);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -67,22 +69,49 @@ export default function Login() {
       <h1 className={styles.title}>Login</h1>
       <form className="form-container">
         <div className="input-container">
-          <label className="form-label">E-post</label>
+          <label className="form-label" htmlFor="email">
+            E-post
+          </label>
           <input
             type="email"
+            name="email"
+            id="email"
             placeholder="me@example.com"
             className="form-control"
+            autoComplete="email"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="input-container">
-          <label className="form-label">Lösenord</label>
-          <input
-            type="password"
-            placeholder="********"
-            className="form-control"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <label className="form-label" htmlFor="password">
+            Lösenord
+          </label>
+          <div className={styles.passwordContainer}>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              id="password"
+              placeholder="********"
+              className="form-control"
+              autoComplete="current-password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {showPassword ? (
+              <IoMdEyeOff
+                color="#23449B"
+                size="24px"
+                className={styles.showPassword}
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            ) : (
+              <IoMdEye
+                color="#23449B"
+                size="24px"
+                className={styles.showPassword}
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            )}
+          </div>
         </div>
         <button
           className={styles.submit + " btn btn-primary"}

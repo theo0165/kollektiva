@@ -73,3 +73,19 @@
   font-weight: 600;
   padding: 16px 0;
 }
+
+.passwordContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+  }
+}
+
+.showPassword {
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+}
