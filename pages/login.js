@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/initSupabase";
+import styles from "../styles/Login.module.css";
+import logo from "../assets/logo.svg";
 
 export default function Login() {
   const [user, setUser] = useState(supabase.auth.user() || null);
@@ -55,44 +57,71 @@ export default function Login() {
 
   return (
     <div>
-      {!user && (
-        <form>
-          {loginError && <p>{loginError}</p>}
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              handleLogin();
-            }}
-          >
-            Login
-          </button>
-        </form>
-      )}
-
-      {user && (
-        <>
-          <h1>Hello {user.email}</h1>
-          <button onClick={handleLogout}>Logout</button>
-        </>
-      )}
+      <div className={styles.logo}>
+        <img src={logo.src} />
+      </div>
+      <form className="form-container">
+        <div className="input-container">
+          <label className="form-label">E-post</label>
+          <input
+            type="email"
+            placeholder="me@example.com"
+            className="form-control"
+          />
+        </div>
+        <div className="input-container">
+          <label className="form-label">Lösenord</label>
+          <input type="password" className="form-control" />
+        </div>
+        <button className="btn btn-primary">Logga in</button>
+      </form>
+      <a href="#">Glömt lösenord?</a>
+      <div>
+        <p>Eller logga in med:</p>
+        <div></div>
+      </div>
     </div>
   );
 }
+
+/*
+
+{!user && (
+  <form>
+    {loginError && <p>{loginError}</p>}
+    <div>
+      <label htmlFor="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+    </div>
+    <div>
+      <label htmlFor="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+    </div>
+    <button
+      onClick={(e) => {
+        e.preventDefault();
+        handleLogin();
+      }}
+    >
+      Login
+    </button>
+  </form>
+)}
+
+{user && (
+  <>
+    <h1>Hello {user.email}</h1>
+    <button onClick={handleLogout}>Logout</button>
+  </>
+)}
+*/
