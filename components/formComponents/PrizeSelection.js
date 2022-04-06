@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 // step 11 choose prize for your residence
 export default function PrizeSelection({ state, handleChange }) {
+  const [suggestedPrice, setSuggestedPrice] = useState(0);
+
   return (
     <div>
       <h1>Hur mycket kostar bostaden?</h1>
@@ -57,7 +61,7 @@ export default function PrizeSelection({ state, handleChange }) {
         Baserat på informationen du har fyllt i är den rekommenderade
         månadshyran:{" "}
       </p>
-      <bold>{prize} kr.</bold>
+      <bold>{suggestedPrice} kr.</bold>
       <input
         type="text"
         id="monthlyRent"

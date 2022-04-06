@@ -11,6 +11,7 @@ import GardenSelection from "./GardenSelection";
 import HeatingSelection from "./HeatingSelection";
 import AmenitiesSelection from "./AmenitiesSelection";
 import PictureSelection from "./PictureSelection";
+import PrizeSelection from "./PrizeSelection";
 import Preview from "./Preview";
 import Success from "./Success";
 import RestrictionSelection from "./RestrictionSelection";

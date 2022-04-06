@@ -19,4 +19,15 @@
   font-size: 18px;
   border-radius: 5px;
   border: none;
+
+  &.full-w {
+    width: 100%;
+  }
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  color: $primaryBlue;
 }
