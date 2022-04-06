@@ -10,6 +10,7 @@ const FormControls = ({ maxSteps, step, nextStep, prevStep }) => {
     stepDots.push(
       <div
         className={`${styles.dot} ${i < step - 1 ? styles.checked : ""}`}
+        key={`form-control-dot-${i}`}
       ></div>
     );
   }
