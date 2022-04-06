@@ -8,19 +8,20 @@ export default function PictureSelection({ state, handleChange }) {
       </p>
       <div className="picture-container">
         <label htmlFor="picture-container">Ladda upp bilder</label>
-        <img src="./assets/house.png" />
-        <img src="./assets/kitchen.png" />
-        <img src="./assets/livingroom.png" />
-        <img src="./assets/bathroom.jpeg" />
-        <img src="./assets/blank.png" />
+        <img className="form-img" src="../assets/house.png" />
+        <img className="form-img" src="./assets/kitchen.png" />
+        <img className="form-img" src="./assets/livingroom.png" />
+        <img className="form-img" src="./assets/bathroom.jpeg" />
+        <img className="form-img" src="./assets/blank.png" />
       </div>
       <div className="video-container">
         <label htmlFor="video-container">Ladda upp videoklipp</label>
-        <img src="./assets/blank.png" />
+        <img className="form-img" src="./assets/blank.png" />
       </div>
-      <div className="house-description">
-        <label htmlFor="house-description">Ladda upp bilder</label>
+      <div className="description-container">
+        <label htmlFor="house-description">Beskriv bostaden</label>
         <input
+          className=""
           id="house-description"
           name="house-description"
           value="house-description"

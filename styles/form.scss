@@ -35,3 +35,29 @@
 .form-subtitle {
   text-align: center;
 }
+
+.form-img {
+  border-radius: 20%;
+  width: 3rem;
+  height: 3rem;
+}
+.house-description {
+  height: 3rem;
+  width: 5rem;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.checkbox {
+  display: inline-block;
+  padding: 0.5rem;
+}
