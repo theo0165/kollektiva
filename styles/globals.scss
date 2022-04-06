@@ -32,9 +32,21 @@ a {
   font-size: 24px;
   border-radius: 5px;
   cursor: pointer;
+  background: $secondaryWhite;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
   background: $primaryBlue;
+  color: white;
+}
+
+.btn-danger {
+  background: $utilityFailure;
+  color: white;
+}
+
+.btn-success {
+  background: $utilitySuccess;
   color: white;
 }

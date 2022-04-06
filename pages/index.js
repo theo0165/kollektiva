@@ -22,7 +22,9 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <NewResidence step={step} nextStep={nextStep} prevStep={prevStep} />
+      <div style={{ marginBottom: "200px" }}>
+        <NewResidence step={step} nextStep={nextStep} prevStep={prevStep} />
+      </div>
       <FormControls
         maxSteps={maxSteps}
         step={step}
