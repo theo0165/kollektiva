@@ -11,52 +11,64 @@ export default function PrizeSelection({ state, handleChange }) {
         Ange vad som ingår i månadshyran och den totala månadshyran.
       </p>
       <div className="includedContainer">
-        <bold>Vad ingår i månadshyran? </bold>
-        <input
-          type="checkbox"
-          id="heating"
-          name="heating"
-          value="heating"
-          onChange={handleChange("heating")}
-          checked={state.heating}
-        />
-        <label htmlFor="heating">Värme</label>
-        <input
-          type="checkbox"
-          id="water"
-          name="water"
-          value="water"
-          onChange={handleChange("water")}
-          checked={state.water}
-        />
-        <label htmlFor="water">Vatten</label>
-        <input
-          type="checkbox"
-          id="electricity"
-          name="electricity"
-          value="electricity"
-          onChange={handleChange("electricity")}
-          checked={state.electricity}
-        />
-        <label htmlFor="electricity">El</label>
-        <input
-          type="checkbox"
-          id="broadband"
-          name="broadband"
-          value="broadband"
-          onChange={handleChange("broadband")}
-          checked={state.broadband}
-        />
-        <label htmlFor="broadband">Bredband</label>
-        <input
-          type="checkbox"
-          id="garbage"
-          name="garbage"
-          value="garbage"
-          onChange={handleChange("garbage")}
-          checked={state.garbage}
-        />
-        <label htmlFor="garbage">Sophantering</label>
+        <p>Vad ingår i månadshyran? </p>
+        <div className="checkbox-buttons">
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="heating"
+              name="heating"
+              value="heating"
+              onChange={handleChange("heating")}
+              checked={state.heating}
+            />
+            <label htmlFor="heating">Värme</label>
+          </div>
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="water"
+              name="water"
+              value="water"
+              onChange={handleChange("water")}
+              checked={state.water}
+            />
+            <label htmlFor="water">Vatten</label>
+          </div>
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="electricity"
+              name="electricity"
+              value="electricity"
+              onChange={handleChange("electricity")}
+              checked={state.electricity}
+            />
+            <label htmlFor="electricity">El</label>
+          </div>
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="broadband"
+              name="broadband"
+              value="broadband"
+              onChange={handleChange("broadband")}
+              checked={state.broadband}
+            />
+            <label htmlFor="broadband">Bredband</label>
+          </div>
+          <div className="checkbox">
+            <input
+              type="checkbox"
+              id="garbage"
+              name="garbage"
+              value="garbage"
+              onChange={handleChange("garbage")}
+              checked={state.garbage}
+            />
+            <label htmlFor="garbage">Sophantering</label>
+          </div>
+        </div>
       </div>
       <div className="prizeContainer"></div>
       <bold>Rekommenderad månadshyra</bold>
