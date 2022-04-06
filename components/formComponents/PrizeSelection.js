@@ -2,7 +2,10 @@
 export default function PrizeSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Hur mycket kostar bostaden?</h1>
+      <h1 className="form-title">Hur mycket kostar bostaden?</h1>
+      <p className="form-subtitle">
+        Ange vad som ingår i månadshyran och den totala månadshyran.
+      </p>
       <div className="includedContainer">
         <bold>Vad ingår i månadshyran? </bold>
         <input

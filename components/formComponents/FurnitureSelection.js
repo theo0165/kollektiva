@@ -3,7 +3,8 @@
 export default function FurnitureSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Hur hyrs bostaden ut?</h1>
+      <h1 className="form-title">Hur hyrs bostaden ut?</h1>
+      <p className="form-subtitle">Välj ett alternativ.</p>
       <div className="radio-buttons">
         <input
           type="radio"
@@ -13,7 +14,9 @@ export default function FurnitureSelection({ state, handleChange }) {
           onChange={handleChange("furniture")}
           checked={state.furniture === "fullyFurnished" ? true : false}
         />
-        <label htmlFor="fullyFurnished">Möblerad</label>
+        <label className="form-label" htmlFor="fullyFurnished">
+          Möblerad
+        </label>
         <input
           type="radio"
           id="partiallyFurnished"
@@ -22,7 +25,9 @@ export default function FurnitureSelection({ state, handleChange }) {
           onChange={handleChange("furniture")}
           checked={state.furniture === "partiallyFurnished" ? true : false}
         />
-        <label htmlFor="partiallyFurnished">Delvis möblerad</label>
+        <label className="form-label" htmlFor="partiallyFurnished">
+          Delvis möblerad
+        </label>
         <input
           type="radio"
           id="unFurnished"
@@ -31,7 +36,9 @@ export default function FurnitureSelection({ state, handleChange }) {
           onChange={handleChange("furniture")}
           checked={state.furniture === "unFurnished" ? true : false}
         />
-        <label htmlFor="unFurnished">Omöblerad</label>
+        <label className="form-label" htmlFor="unFurnished">
+          Omöblerad
+        </label>
       </div>
     </div>
   );

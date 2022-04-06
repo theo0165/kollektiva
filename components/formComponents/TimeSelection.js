@@ -2,7 +2,10 @@
 export default function TimeSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Hur länge vill du hyra ut bostaden?</h1>
+      <h1 className="form-title">Hur länge vill du hyra ut bostaden?</h1>
+      <p className="form-subtitle">
+        Välj startdatum och slutdatum för uthyrningsperioden.
+      </p>
       <div className="date-inputs">
         <input
           type="date"

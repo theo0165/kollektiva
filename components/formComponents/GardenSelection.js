@@ -3,6 +3,7 @@ export default function GardenSelection({ state, handleChange }) {
   return (
     <div>
       <h1>Har bostaden trädgård?</h1>
+      <p className="form-subtitle">Välj ett alternativ.</p>
       <div className="radio-buttons">
         <input
           type="radio"
@@ -12,7 +13,9 @@ export default function GardenSelection({ state, handleChange }) {
           onChange={handleChange("garden")}
           checked={state.garden === "yes" ? true : false}
         />
-        <label htmlFor="yes">Ja</label>
+        <label className="form-label" htmlFor="yes">
+          Ja
+        </label>
         <input
           type="radio"
           id="no"
@@ -21,13 +24,17 @@ export default function GardenSelection({ state, handleChange }) {
           onChange={handleChange("garden")}
           checked={state.garden === "no" ? true : false}
         />
-        <label htmlFor="no">Nej</label>
+        <label className="form-label" htmlFor="no">
+          Nej
+        </label>
       </div>
       <div className="gardenSuppliesContainer">
-        <p>
+        <p className="form-subtitle">
           Om <b>Ja</b>, finns trädgårdsutrustning?
         </p>
-        <label htmlFor="yesGarden">Trädgårdsutrustning finns</label>
+        <label className="form-label" htmlFor="yesGarden">
+          Trädgårdsutrustning finns
+        </label>
         <input
           type="radio"
           id="yesGarden"
@@ -36,7 +43,9 @@ export default function GardenSelection({ state, handleChange }) {
           onChange={handleChange("gardenEquipment")}
           checked={state.gardenEquipment === "yesGarden" ? true : false}
         />
-        <label htmlFor="noGarden">Trädgårdsutrustning finns</label>
+        <label className="form-label" htmlFor="noGarden">
+          Trädgårdsutrustning finns
+        </label>
         <input
           type="radio"
           id="noGarden"

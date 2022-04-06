@@ -3,7 +3,8 @@
 export default function SizeSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Hur stor är bostaden?</h1>
+      <h1 className="form-title">Hur stor är bostaden?</h1>
+      <p className="form-subtitle">Fyll i dina uppgifter.</p>
       <input
         type="range"
         min="1"

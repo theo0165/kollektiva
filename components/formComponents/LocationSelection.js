@@ -25,7 +25,7 @@ export default function LocationSelection({ state, handleChange, setState }) {
 
   return (
     <>
-      <h1>Vart finns bostaden</h1>
+      <h1 className="form-title">Vart finns bostaden?</h1>
       <div>
         <label htmlFor="address">Sök efter din address</label>
         <input

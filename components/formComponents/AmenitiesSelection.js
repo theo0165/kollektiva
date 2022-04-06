@@ -2,8 +2,8 @@
 export default function AmenitiesSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Vilka bekvämligheter finns i bostaden?</h1>
-      <p>Välj alla alternativ som stämmer.</p>
+      <h1 className="form-title">Vilka bekvämligheter finns i bostaden?</h1>
+      <p className="form-subtitle">Välj alla alternativ som stämmer.</p>
       <div className="checkbox-buttons">
         <input
           type="checkbox"
@@ -13,7 +13,9 @@ export default function AmenitiesSelection({ state, handleChange }) {
           onChange={handleChange("balcony")}
           checked={state.balcony}
         />
-        <label htmlFor="balcony">Balkong/Uteplats</label>
+        <label className="form-label" htmlFor="balcony">
+          Balkong/Uteplats
+        </label>
         <input
           type="checkbox"
           id="elevator"

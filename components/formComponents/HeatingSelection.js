@@ -2,7 +2,8 @@
 export default function HeatingSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Hur värms bostaden upp?</h1>
+      <h1 className="form-title">Hur värms bostaden upp?</h1>
+      <p className="form-subtitle">Välj ett alternativ.</p>
       <div className="radio-buttons">
         <input
           type="radio"

@@ -2,7 +2,8 @@
 export default function PartSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Jag vill hyra ut: </h1>
+      <h1 className="form-title">Jag vill hyra ut: </h1>
+      <p className="form-subtitle">Välj ett alternativ.</p>
       <div className="radio-buttons">
         <input
           type="radio"
