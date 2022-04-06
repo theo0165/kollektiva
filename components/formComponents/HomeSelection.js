@@ -2,7 +2,8 @@
 export default function HomeSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Vilken typ av boende vill du hyra ut? </h1>
+      <h1 className="form-title">Vilken typ av boende vill du hyra ut? </h1>
+      <p className="form-subtitle">Välj ett alternativ.</p>
       <div className="radio-buttons">
         <input
           type="radio"
@@ -12,7 +13,9 @@ export default function HomeSelection({ state, handleChange }) {
           onChange={handleChange("type")}
           checked={state.type === "villa" ? true : false}
         />
-        <label htmlFor="villa">Villa</label>
+        <label className="form-label" htmlFor="villa">
+          Villa
+        </label>
         <input
           type="radio"
           id="stuga"
@@ -21,7 +24,9 @@ export default function HomeSelection({ state, handleChange }) {
           onChange={handleChange("type")}
           checked={state.type === "stuga" ? true : false}
         />
-        <label htmlFor="stuga">Stuga</label>
+        <label className="form-label" htmlFor="stuga">
+          Stuga
+        </label>
         <input
           type="radio"
           id="radhus"
@@ -39,7 +44,9 @@ export default function HomeSelection({ state, handleChange }) {
           onChange={handleChange("type")}
           checked={state.type === "parhus" ? true : false}
         />
-        <label htmlFor="parhus">Parhus</label>
+        <label className="form-label" htmlFor="parhus">
+          Parhus
+        </label>
       </div>
     </div>
   );

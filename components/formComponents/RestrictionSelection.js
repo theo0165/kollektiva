@@ -2,8 +2,8 @@
 export default function RestrictionSelection({ state, handleChange }) {
   return (
     <div>
-      <h1>Vem får hyra bostaden?</h1>
-      <p>Beskriv din framtida hyresgäst.</p>
+      <h1 className="form-title">Vem får hyra bostaden?</h1>
+      <p className="form-subtitle">Beskriv din framtida hyresgäst.</p>
       <div className="incomeContainer">
         <bold>Lägsta tillåtna årsinkomst: </bold>
         <input
