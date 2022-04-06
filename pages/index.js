@@ -4,6 +4,7 @@ import NewResidence from "../components/formComponents/NewResidence";
 import FormControls from "../components/FormControls";
 import styles from "../styles/Home.module.scss";
 import { useState } from "react";
+import Header from "../components/Header";
 
 export default function Home() {
   const maxSteps = 14;
@@ -34,3 +35,12 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <>
+      <Header shouldExit={true} />
+      {page}
+    </>
+  );
+};
