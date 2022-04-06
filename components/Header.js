@@ -7,13 +7,17 @@ import Link from "next/link";
 export default function Header({ shouldExit }) {
   return (
     <header className={styles.container}>
-      <a href="/">
-        <img src={logo.src} />
-      </a>
-      {shouldExit ? (
+      <Link href="/">
         <a href="/">
-          <IoMdClose size="40px" color="#23449b" />
+          <img src={logo.src} />
         </a>
+      </Link>
+      {shouldExit ? (
+        <Link href="/">
+          <a href="/">
+            <IoMdClose size="40px" color="#23449b" />
+          </a>
+        </Link>
       ) : (
         <MdMenu size="40px" color="#23449b" />
       )}
