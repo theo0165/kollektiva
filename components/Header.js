@@ -8,13 +8,13 @@ export default function Header({ shouldExit }) {
   return (
     <header className={styles.container}>
       <Link href="/">
-        <a href="/">
+        <a>
           <img src={logo.src} />
         </a>
       </Link>
       {shouldExit ? (
         <Link href="/">
-          <a href="/">
+          <a>
             <IoMdClose size="40px" color="#23449b" />
           </a>
         </Link>
