@@ -1,0 +1,49 @@
+@import "./variables/variables.scss";
+
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $secondaryWhite;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  padding: 24px 0;
+}
+
+.btnContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 16px;
+}
+
+.stepCount {
+  text-align: center;
+  font-size: 12px;
+  color: $secondaryGrey2;
+  margin-bottom: 16px;
+}
+
+.dotContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: $secondaryGrey3;
+  display: inline-block;
+  margin-right: 11px;
+  border-radius: 100%;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.checked {
+  background: $primaryBlue;
+}
