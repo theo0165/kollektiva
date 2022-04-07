@@ -1,46 +1,58 @@
 // step 9 choose how your rental is heated (central, electric, gas etc)
 export default function HeatingSelection({ state, handleChange }) {
   return (
-    <div>
+    <div className="col-10">
       <h1 className="form-title">Hur värms bostaden upp?</h1>
       <p className="form-subtitle">Välj ett alternativ.</p>
-      <div className="radio-buttons">
+      <div className="input-container">
         <input
           type="radio"
+          className="form-radio"
           id="heatingOne"
           name="heat"
           value="central"
           onChange={handleChange("heat")}
           checked={state.heat === "central" ? true : false}
         />
-        <label htmlFor="heatingOne">Centralvärme</label>
+        <label className="form-label" htmlFor="heatingOne">
+          Centralvärme
+        </label>
         <input
           type="radio"
+          className="form-radio"
           id="heatingTwo"
           name="heat"
           value="electric"
           onChange={handleChange("heat")}
           checked={state.heat === "electric" ? true : false}
         />
-        <label htmlFor="heatingTwo">Eluppvärmning</label>
+        <label className="form-label" htmlFor="heatingTwo">
+          Eluppvärmning
+        </label>
         <input
           type="radio"
+          className="form-radio"
           id="heatingThree"
           name="heat"
           value="gas"
           onChange={handleChange("heat")}
           checked={state.heat === "gas" ? true : false}
         />
-        <label htmlFor="heatingThree">Gasvärme</label>
+        <label className="form-label" htmlFor="heatingThree">
+          Gasvärme
+        </label>
         <input
           type="radio"
+          className="form-radio"
           id="heatingFour"
           name="heat"
           value="radiator"
           onChange={handleChange("heat")}
           checked={state.heat === "radiator" ? true : false}
         />
-        <label htmlFor="heatingFour">Radiatorvärme</label>
+        <label className="form-label" htmlFor="heatingFour">
+          Radiatorvärme
+        </label>
       </div>
     </div>
   );
