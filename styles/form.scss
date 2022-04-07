@@ -11,7 +11,7 @@
 
 .form-label {
   font-weight: 600;
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .form-control {
@@ -53,6 +53,12 @@
 .radio-buttons {
   display: flex;
   flex-direction: column;
+
+  &.has-margin {
+    div {
+      margin: 12px 0;
+    }
+  }
 }
 
 .people-container {
@@ -90,9 +96,16 @@
     font-weight: 600;
     font-size: 24px;
     cursor: pointer;
-    background: white;
+    background: $secondaryWhite;
     padding: 16px 0;
     border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+    svg,
+    img {
+      color: $primaryBlue;
+      margin-right: 24px;
+    }
   }
 }
 
