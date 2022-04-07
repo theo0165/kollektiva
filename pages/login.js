@@ -65,7 +65,7 @@ export default function Login() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} col-10`}>
       <h1 className={styles.title}>Login</h1>
       <form className="form-container">
         <div className="input-container">
