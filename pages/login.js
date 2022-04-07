@@ -65,7 +65,7 @@ export default function Login() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} col-10`}>
       <h1 className={styles.title}>Login</h1>
       <form className="form-container">
         <div className="input-container">
@@ -146,45 +146,3 @@ export default function Login() {
     </div>
   );
 }
-
-/*
-
-{!user && (
-  <form>
-    {loginError && <p>{loginError}</p>}
-    <div>
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-    </div>
-    <div>
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-    </div>
-    <button
-      onClick={(e) => {
-        e.preventDefault();
-        handleLogin();
-      }}
-    >
-      Login
-    </button>
-  </form>
-)}
-
-{user && (
-  <>
-    <h1>Hello {user.email}</h1>
-    <button onClick={handleLogout}>Logout</button>
-  </>
-)}
-*/
