@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import PartSelection from "./PartSelection";
-import HomeSelection from "./Homeselection";
+import HomeSelection from "./HomeSelection";
 import SizeSelection from "./SizeSelection";
 import LocationSelection from "./LocationSelection";
 import TimeSelection from "./TimeSelection";
