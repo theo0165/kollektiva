@@ -2,9 +2,9 @@
 export default function GardenSelection({ state, handleChange }) {
   return (
     <div className="col-10">
-      <h1>Har bostaden trädgård?</h1>
+      <h1 className="form-title">Har bostaden trädgård?</h1>
       <p className="form-subtitle">Välj ett alternativ.</p>
-      <div className="radio-buttons">
+      <div className="radio-buttons garden-container">
         <input
           type="radio"
           className="form-radio"
@@ -33,7 +33,7 @@ export default function GardenSelection({ state, handleChange }) {
       <p className="form-subtitle">
         Om <b>Ja</b>, finns trädgårdsutrustning?
       </p>
-      <div className="radio-buttons">
+      <div className="radio-buttons garden-container">
         <div>
           <input
             type="radio"

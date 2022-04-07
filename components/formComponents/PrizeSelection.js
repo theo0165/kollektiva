@@ -10,12 +10,12 @@ export default function PrizeSelection({ state, handleChange }) {
       <p className="form-subtitle">
         Ange vad som ingår i månadshyran och den totala månadshyran.
       </p>
-      <div className="includedContainer">
-        <p>Vad ingår i månadshyran? </p>
-        <div className="checkbox-buttons">
+      <div className="checkbox-outer">
+        <div className="checkbox-container garden-container">
           <div className="checkbox">
             <input
               type="checkbox"
+              className="form-checkbox"
               id="heating"
               name="heating"
               value="heating"
@@ -27,6 +27,7 @@ export default function PrizeSelection({ state, handleChange }) {
           <div className="checkbox">
             <input
               type="checkbox"
+              className="form-checkbox"
               id="water"
               name="water"
               value="water"
@@ -38,6 +39,7 @@ export default function PrizeSelection({ state, handleChange }) {
           <div className="checkbox">
             <input
               type="checkbox"
+              className="form-checkbox"
               id="electricity"
               name="electricity"
               value="electricity"
@@ -49,6 +51,7 @@ export default function PrizeSelection({ state, handleChange }) {
           <div className="checkbox">
             <input
               type="checkbox"
+              className="form-checkbox"
               id="broadband"
               name="broadband"
               value="broadband"
@@ -60,6 +63,7 @@ export default function PrizeSelection({ state, handleChange }) {
           <div className="checkbox">
             <input
               type="checkbox"
+              className="form-checkbox"
               id="garbage"
               name="garbage"
               value="garbage"
@@ -71,7 +75,7 @@ export default function PrizeSelection({ state, handleChange }) {
         </div>
       </div>
       <div className="prizeContainer"></div>
-      <bold>Rekommenderad månadshyra</bold>
+      <p className="form-subtitle">Rekommenderad månadshyra</p>
       <p>
         Baserat på informationen du har fyllt i är den rekommenderade
         månadshyran:{" "}

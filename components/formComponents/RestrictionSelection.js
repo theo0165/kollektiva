@@ -20,47 +20,63 @@ export default function RestrictionSelection({ state, handleChange }) {
             />
           </div>
           <p className="form-subtitle">Bostaden får hyras av: </p>
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              className="form-checkbox"
-              id="men"
-              name="men"
-              value="men"
-              onChange={handleChange("men")}
-              checked={state.men === "men" ? true : false}
-            />
-            <label className="form-label" htmlFor="men">
-              Män
-            </label>
-          </div>
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              className="form-checkbox"
-              id="women"
-              name="women"
-              value="women"
-              onChange={handleChange("women")}
-              checked={state.women === "women" ? true : false}
-            />
-            <label className="form-label" htmlFor="women">
-              Kvinnor
-            </label>
-          </div>
-          <div className="checkbox">
-            <input
-              type="checkbox"
-              className="form-checkbox"
-              id="nonBinary"
-              name="nonBinary"
-              value="nonBinary"
-              onChange={handleChange("nonBinary")}
-              checked={state.nonBinary === "nonBinary" ? true : false}
-            />
-            <label className="form-label" htmlFor="nonBinary">
-              Ickebinära
-            </label>
+          <div className="checkbox-container garden-container">
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                className="form-checkbox"
+                id="men"
+                name="men"
+                value="men"
+                onChange={handleChange("men")}
+                checked={state.men === "men" ? true : false}
+              />
+              <label className="form-label" htmlFor="men">
+                Män
+              </label>
+            </div>
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                className="form-checkbox"
+                id="women"
+                name="women"
+                value="women"
+                onChange={handleChange("women")}
+                checked={state.women === "women" ? true : false}
+              />
+              <label className="form-label" htmlFor="women">
+                Kvinnor
+              </label>
+            </div>
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                className="form-checkbox"
+                id="nonBinary"
+                name="nonBinary"
+                value="nonBinary"
+                onChange={handleChange("nonBinary")}
+                checked={state.nonBinary === "nonBinary" ? true : false}
+              />
+              <label className="form-label" htmlFor="nonBinary">
+                Ickebinära
+              </label>
+            </div>
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                className="form-checkbox"
+                id="all"
+                name="all"
+                value="all"
+                onChange={handleChange("all")}
+                checked={state.all === "all" ? true : false}
+              />
+              <label className="form-label" htmlFor="all">
+                Alla
+              </label>
+            </div>
           </div>
         </div>
       </div>
