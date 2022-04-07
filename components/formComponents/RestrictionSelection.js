@@ -1,25 +1,25 @@
 //step 12 choose whether or not you wish to have a smoking free home, pet free home etc
 export default function RestrictionSelection({ state, handleChange }) {
   return (
-    <div>
+    <div className="col-10">
       <h1 className="form-title">Vem får hyra bostaden?</h1>
       <p className="form-subtitle">Beskriv din framtida hyresgäst.</p>
-      <div className="incomeContainer">
-        <bold>Lägsta tillåtna årsinkomst: </bold>
+      <div className="input-container">
+        <label htmlFor="income">Lägsta tillåtna årsinkomst</label>
         <input
-          type="text"
+          type="number"
+          className="form-control"
           id="income"
           name="income"
-          value="income"
           onChange={handleChange("income")}
           checked={state.income}
         />
-        <label htmlFor="income">Balkong/Uteplats</label>
       </div>
-      <div className="genderContainer">
+      <div className="input-container">
         <bold>Bostaden får hyras av: </bold>
         <input
           type="checkbox"
+          className="form-checkbox"
           id="men"
           name="men"
           value="men"
@@ -29,6 +29,7 @@ export default function RestrictionSelection({ state, handleChange }) {
         <label htmlFor="men">Män</label>
         <input
           type="checkbox"
+          className="form-checkbox"
           id="women"
           name="women"
           value="women"
@@ -38,6 +39,7 @@ export default function RestrictionSelection({ state, handleChange }) {
         <label htmlFor="women">Kvinnor</label>
         <input
           type="checkbox"
+          className="form-checkbox"
           id="nonBinary"
           name="nonBinary"
           value="nonBinary"
@@ -46,10 +48,11 @@ export default function RestrictionSelection({ state, handleChange }) {
         />
         <label htmlFor="nonBinary">Ickebinära</label>
       </div>
-      <div className="petsContainer">
-        <bold>Är husdjur tillåtna i bostaden?</bold>
+      <div className="input-container">
+        <p className="form-subtitle">Är husdjur tillåtna i bostaden?</p>
         <input
           type="radio"
+          className="form-radio"
           id="petsYes"
           name="petsYes"
           value="petsYes"
@@ -59,6 +62,7 @@ export default function RestrictionSelection({ state, handleChange }) {
         <label htmlFor="petsYes">Ja</label>
         <input
           type="radio"
+          className="form-radio"
           id="petsNo"
           name="petsNo"
           value="petsNo"
@@ -67,9 +71,13 @@ export default function RestrictionSelection({ state, handleChange }) {
         />
         <label htmlFor="petsNo">Nej</label>
       </div>
-      <div className="smokingContainer">
+      <p className="form-subtitle">
+        Är rökning tillåtet i anslutning till bostaden?
+      </p>
+      <div className="input-container">
         <input
           type="radio"
+          className="form-radio"
           id="smokingYes"
           name="smokingYes"
           value="smokingYes"
@@ -79,6 +87,7 @@ export default function RestrictionSelection({ state, handleChange }) {
         <label htmlFor="smokingYes">Ja</label>
         <input
           type="radio"
+          className="form-radio"
           id="smokingNo"
           name="smokingNo"
           value="smokingNo"
