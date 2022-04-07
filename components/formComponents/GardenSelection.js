@@ -1,12 +1,13 @@
 //step 8 choose whether or not your rental has a garden
 export default function GardenSelection({ state, handleChange }) {
   return (
-    <div>
+    <div className="col-10">
       <h1>Har bostaden trädgård?</h1>
       <p className="form-subtitle">Välj ett alternativ.</p>
       <div className="radio-buttons">
         <input
           type="radio"
+          className="form-radio"
           id="yes"
           name="garden"
           value="yes"
@@ -18,6 +19,7 @@ export default function GardenSelection({ state, handleChange }) {
         </label>
         <input
           type="radio"
+          className="form-radio"
           id="no"
           name="garden"
           value="no"
@@ -28,32 +30,38 @@ export default function GardenSelection({ state, handleChange }) {
           Nej
         </label>
       </div>
-      <div className="gardenSuppliesContainer">
-        <p className="form-subtitle">
-          Om <b>Ja</b>, finns trädgårdsutrustning?
-        </p>
-        <label className="form-label" htmlFor="yesGarden">
-          Trädgårdsutrustning finns
-        </label>
-        <input
-          type="radio"
-          id="yesGarden"
-          name="gardenEquipment"
-          value="yesGarden"
-          onChange={handleChange("gardenEquipment")}
-          checked={state.gardenEquipment === "yesGarden" ? true : false}
-        />
-        <label className="form-label" htmlFor="noGarden">
-          Trädgårdsutrustning finns
-        </label>
-        <input
-          type="radio"
-          id="noGarden"
-          name="gardenEquipment"
-          value="noGarden"
-          onChange={handleChange("gardenEquipment")}
-          checked={state.gardenEquipment === "noGarden" ? true : false}
-        />
+      <p className="form-subtitle">
+        Om <b>Ja</b>, finns trädgårdsutrustning?
+      </p>
+      <div className="radio-buttons">
+        <div>
+          <input
+            type="radio"
+            className="form-radio"
+            id="yesGarden"
+            name="gardenEquipment"
+            value="yesGarden"
+            onChange={handleChange("gardenEquipment")}
+            checked={state.gardenEquipment === "yesGarden" ? true : false}
+          />
+          <label className="form-label" htmlFor="yesGarden">
+            Ja
+          </label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            className="form-radio"
+            id="noGarden"
+            name="gardenEquipment"
+            value="noGarden"
+            onChange={handleChange("gardenEquipment")}
+            checked={state.gardenEquipment === "noGarden" ? true : false}
+          />
+          <label className="form-label" htmlFor="noGarden">
+            Nej
+          </label>
+        </div>
       </div>
     </div>
   );
