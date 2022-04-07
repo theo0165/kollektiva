@@ -71,7 +71,6 @@
 .checkbox-buttons {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
 }
 
 .checkbox {
@@ -115,4 +114,20 @@ input[type="number"] {
   border: none;
   border-radius: 5px;
   margin-bottom: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.checkbox-outer {
+  display: flex;
+  justify-content: center;
 }
