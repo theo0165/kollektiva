@@ -41,6 +41,7 @@ export default function NewResidence({ step, nextStep, prevStep }) {
     parking: "",
     furnace: "",
     internet: "",
+    description: "",
   });
 
   // handle field change

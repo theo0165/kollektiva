@@ -6,41 +6,51 @@ import livingroom from "../../assets/livingroom.png";
 import bathroom from "../../assets/bathroom.jpeg";
 import blank from "../../assets/blank.png";
 
+import styles from "../../styles/formComponents/PictureSelection.module.scss";
+
 export default function PictureSelection({ state, handleChange }) {
   return (
-    <div>
+    <div className="col-10">
       <h1 className="form-title">Hur ser bostaden ut?</h1>
-      <p className="form-subtitle">
+      <p className={`${styles.subtitle} form-subtitle`}>
         Ladda upp några bilder och/eller videoklipp av bostaden.
       </p>
-      <div className="picture-container">
+      <div className={styles.pushDown}>
         <label className="form-label" htmlFor="picture-container">
           Ladda upp bilder
         </label>
-        <img className="form-img" src={house.src} />
-        <img className="form-img" src={kitchen.src} />
-        <img className="form-img" src={livingroom.src} />
-        <img className="form-img" src={bathroom.src} />
-        <img className="form-img" src={blank.src} />
+        <div className={styles.pictureContainer}>
+          <img className={styles.formImg} src={house.src} />
+          <img className={styles.formImg} src={kitchen.src} />
+          <img className={styles.formImg} src={livingroom.src} />
+          <img className={styles.formImg} src={bathroom.src} />
+          <div className={styles.blank}>+</div>
+        </div>
       </div>
-      <div className="video-container">
+      <div>
         <label className="form-label" htmlFor="video-container">
           Ladda upp videoklipp
         </label>
-        <img className="form-img" src={blank.src} />
+        <div className={styles.videoContainer}>
+          <div className={styles.blank}>+</div>
+        </div>
       </div>
-      <div className="description-container">
+      <div>
         <label className="form-label" htmlFor="house-description">
           Beskriv bostaden
         </label>
-        <input
-          className=""
-          id="house-description"
-          name="house-description"
-          value="house-description"
-          type="text"
-          defaultValue="Beskriv bostaden"
-        ></input>
+        <div className="description-container">
+          <textarea
+            className={`${styles.description} form-control`}
+            id="house-description"
+            name="house-description"
+            type="text"
+            placeholder="Beskriv bostaden..."
+            enterkeyhint="next"
+            defaultValue={state.description ?? null}
+            onChange={handleChange("description")}
+          ></textarea>
+        </div>
       </div>
     </div>
   );
