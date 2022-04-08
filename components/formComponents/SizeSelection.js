@@ -11,7 +11,7 @@ export default function SizeSelection({ state, handleChange }) {
         </label>
         <input
           type="number"
-          required
+          required={true}
           className="form-control"
           id="rooms"
           name="rooms"
@@ -22,6 +22,7 @@ export default function SizeSelection({ state, handleChange }) {
           Boarea (m²)
         </label>
         <input
+          required={true}
           type="number"
           id="size"
           name="size"
@@ -32,6 +33,7 @@ export default function SizeSelection({ state, handleChange }) {
           Biarea (m²)
         </label>
         <input
+          required={true}
           type="number"
           id="biarea"
           name="biarea"
@@ -42,6 +44,7 @@ export default function SizeSelection({ state, handleChange }) {
           Tomt (m²)
         </label>
         <input
+          required={true}
           type="number"
           id="tomt"
           name="tomt"
