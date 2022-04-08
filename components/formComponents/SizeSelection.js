@@ -11,6 +11,7 @@ export default function SizeSelection({ state, handleChange }) {
         </label>
         <input
           type="number"
+          required
           className="form-control"
           id="rooms"
           name="rooms"

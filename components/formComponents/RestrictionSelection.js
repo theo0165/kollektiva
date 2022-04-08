@@ -14,7 +14,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           id="income"
           name="income"
           onChange={handleChange("income")}
-          checked={state.income}
+          defaultValue={state.income}
         />
       </div>
       <div className="checkbox-outer">

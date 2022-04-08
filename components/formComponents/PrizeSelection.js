@@ -38,6 +38,7 @@ export default function PrizeSelection({ state, handleChange }) {
           </div>
           <div className="checkbox">
             <input
+              required="true"
               type="checkbox"
               className="form-checkbox"
               id="electricity"
@@ -92,7 +93,7 @@ export default function PrizeSelection({ state, handleChange }) {
           id="monthlyRent"
           name="monthlyRent"
           onChange={handleChange("monthlyRent")}
-          checked={state.monthlyRent}
+          defaultValue={state.monthlyRent}
         />
       </div>
     </div>
