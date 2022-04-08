@@ -16,7 +16,7 @@ const FormControls = ({ maxSteps, step, nextStep, prevStep }) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} form-control`}>
       {step > 1 && (
         <div>
           <p className={styles.stepCount}>

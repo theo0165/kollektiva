@@ -46,7 +46,7 @@ export default function PictureSelection({ state, handleChange }) {
             name="house-description"
             type="text"
             placeholder="Beskriv bostaden..."
-            enterkeyhint="next"
+            enterKeyHint="next"
             defaultValue={state.description ?? null}
             onChange={handleChange("description")}
           ></textarea>

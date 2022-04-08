@@ -66,7 +66,7 @@ export default function SizeSelection({ state, handleChange }) {
           <input
             className="form-radio"
             type="radio"
-            id="SizeTwo"
+            id="sizeTwo"
             name="people"
             value="2"
             onChange={handleChange("people")}
