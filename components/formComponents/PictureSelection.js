@@ -39,7 +39,7 @@ export default function PictureSelection({ state, handleChange }) {
         <label className="form-label" htmlFor="house-description">
           Beskriv bostaden
         </label>
-        <div className="description-container">
+        <div className={styles.descriptionContainer}>
           <textarea
             className={`${styles.description} form-control`}
             id="house-description"

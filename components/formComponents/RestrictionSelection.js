@@ -19,7 +19,20 @@ export default function RestrictionSelection({ state, handleChange }) {
       </div>
       <div className="checkbox-outer">
         <div className="checkbox-buttons">
-          <p className="form-subtitle">Bostaden får hyras av: </p>
+          <div className="input-container">
+            <label className="form-label" htmlFor="income">
+              Lägsta tillåtna årsinkomst i kronor
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="income"
+              name="income"
+              onChange={handleChange("income")}
+              checked={state.income}
+            />
+          </div>
+          <p className="form-label">Bostaden får hyras av: </p>
           <div className="checkbox-container garden-container">
             <div className="checkbox">
               <input
@@ -80,7 +93,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           </div>
         </div>
       </div>
-      <p className="form-subtitle">Är husdjur tillåtna i bostaden?</p>
+      <p className="form-label">Är husdjur tillåtna i bostaden?</p>
       <div className="radio-buttons has-margin">
         <div>
           <input
@@ -111,7 +124,7 @@ export default function RestrictionSelection({ state, handleChange }) {
           </label>
         </div>
       </div>
-      <p className="form-subtitle">
+      <p className="form-label">
         Är rökning tillåtet i anslutning till bostaden?
       </p>
       <div className="radio-buttons has-margin">
