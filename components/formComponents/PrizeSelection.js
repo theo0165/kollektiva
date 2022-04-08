@@ -80,7 +80,7 @@ export default function PrizeSelection({ state, handleChange }) {
         Baserat på informationen du har fyllt i är den rekommenderade
         månadshyran:{" "}
       </p>
-      <bold>{suggestedPrice} kr.</bold>
+      <b>{suggestedPrice} kr.</b>
       <input
         type="text"
         id="monthlyRent"
