@@ -11,7 +11,7 @@ export default function HeatingSelection({ state, handleChange }) {
           id="heatingOne"
           name="heat"
           value="central"
-          onChange={handleChange("heat")}
+          onChange={handleChange("heatType")}
           checked={state.heat === "central" ? true : false}
         />
         <label className="form-label" htmlFor="heatingOne">
@@ -23,7 +23,7 @@ export default function HeatingSelection({ state, handleChange }) {
           id="heatingTwo"
           name="heat"
           value="electric"
-          onChange={handleChange("heat")}
+          onChange={handleChange("heatType")}
           checked={state.heat === "electric" ? true : false}
         />
         <label className="form-label" htmlFor="heatingTwo">
@@ -35,7 +35,7 @@ export default function HeatingSelection({ state, handleChange }) {
           id="heatingThree"
           name="heat"
           value="gas"
-          onChange={handleChange("heat")}
+          onChange={handleChange("heatType")}
           checked={state.heat === "gas" ? true : false}
         />
         <label className="form-label" htmlFor="heatingThree">
@@ -47,7 +47,7 @@ export default function HeatingSelection({ state, handleChange }) {
           id="heatingFour"
           name="heat"
           value="radiator"
-          onChange={handleChange("heat")}
+          onChange={handleChange("heatType")}
           checked={state.heat === "radiator" ? true : false}
         />
         <label className="form-label" htmlFor="heatingFour">

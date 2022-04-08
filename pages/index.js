@@ -5,6 +5,7 @@ import FormControls from "../components/FormControls";
 import styles from "../styles/Home.module.scss";
 import { useState } from "react";
 import Header from "../components/Header";
+import { supabase } from "../utils/initSupabase";
 
 export default function Home() {
   const maxSteps = 14;
@@ -22,7 +23,7 @@ export default function Home() {
     furniture: "",
     garden: "",
     gardenEquipment: "",
-    heat: "",
+    heatType: "",
     balcony: "",
     elevator: "",
     air: "",
@@ -35,6 +36,12 @@ export default function Home() {
     furnace: "",
     internet: "",
     description: "",
+    heating: "",
+    water: "",
+    electricity: "",
+    broadband: "",
+    garbage: "",
+    monthlyRent: "",
   });
 
   // handle field change
@@ -52,9 +59,7 @@ export default function Home() {
     setStep(step + 1);
   };
 
-  const publish = () => {
-    console.log("publish", state);
-  };
+  const publish = () => {};
 
   return (
     <div className={styles.container}>

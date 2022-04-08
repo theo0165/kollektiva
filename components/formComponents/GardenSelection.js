@@ -10,7 +10,7 @@ export default function GardenSelection({ state, handleChange }) {
           className="form-radio"
           id="yes"
           name="garden"
-          value="yes"
+          value="true"
           onChange={handleChange("garden")}
           checked={state.garden === "yes" ? true : false}
         />
@@ -22,7 +22,7 @@ export default function GardenSelection({ state, handleChange }) {
           className="form-radio"
           id="no"
           name="garden"
-          value="no"
+          value="false"
           onChange={handleChange("garden")}
           checked={state.garden === "no" ? true : false}
         />
@@ -40,7 +40,7 @@ export default function GardenSelection({ state, handleChange }) {
             className="form-radio"
             id="yesGarden"
             name="gardenEquipment"
-            value="yesGarden"
+            value="true"
             onChange={handleChange("gardenEquipment")}
             checked={state.gardenEquipment === "yesGarden" ? true : false}
           />
@@ -54,7 +54,7 @@ export default function GardenSelection({ state, handleChange }) {
             className="form-radio"
             id="noGarden"
             name="gardenEquipment"
-            value="noGarden"
+            value="false"
             onChange={handleChange("gardenEquipment")}
             checked={state.gardenEquipment === "noGarden" ? true : false}
           />

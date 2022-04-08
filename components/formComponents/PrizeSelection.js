@@ -18,7 +18,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="heating"
               name="heating"
-              value="heating"
+              value="true"
               onChange={handleChange("heating")}
               checked={state.heating}
             />
@@ -30,7 +30,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="water"
               name="water"
-              value="water"
+              value="true"
               onChange={handleChange("water")}
               checked={state.water}
             />
@@ -42,7 +42,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="electricity"
               name="electricity"
-              value="electricity"
+              value="true"
               onChange={handleChange("electricity")}
               checked={state.electricity}
             />
@@ -54,7 +54,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="broadband"
               name="broadband"
-              value="broadband"
+              value="true"
               onChange={handleChange("broadband")}
               checked={state.broadband}
             />
@@ -66,7 +66,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="garbage"
               name="garbage"
-              value="garbage"
+              value="true"
               onChange={handleChange("garbage")}
               checked={state.garbage}
             />

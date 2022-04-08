@@ -13,7 +13,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="balcony"
               name="balcony"
-              value="balcony"
+              value="true"
               onChange={handleChange("balcony")}
               checked={state.balcony}
               className="form-checkbox"
@@ -25,7 +25,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="elevator"
               name="elevator"
-              value="elevator"
+              value="true"
               onChange={handleChange("elevator")}
               checked={state.elevator}
               className="form-checkbox"
@@ -37,7 +37,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="air"
               name="air"
-              value="air"
+              value="true"
               onChange={handleChange("air")}
               checked={state.air}
               className="form-checkbox"
@@ -49,7 +49,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="dishWasher"
               name="dishWasher"
-              value="dishWasher"
+              value="true"
               onChange={handleChange("dishWasher")}
               checked={state.dishWasher}
               className="form-checkbox"
@@ -61,7 +61,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="washingMachine"
               name="washingMachine"
-              value="washingMachine"
+              value="true"
               onChange={handleChange("washingMachine")}
               checked={state.washingMachine}
               className="form-checkbox"
@@ -73,7 +73,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="dryer"
               name="dryer"
-              value="dryer"
+              value="true"
               onChange={handleChange("dryer")}
               checked={state.dryer}
               className="form-checkbox"
@@ -85,7 +85,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="bathTub"
               name="bathTub"
-              value="bathTub"
+              value="true"
               onChange={handleChange("bathTub")}
               checked={state.bathTub}
               className="form-checkbox"
@@ -97,7 +97,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="garage"
               name="garage"
-              value="garage"
+              value="true"
               onChange={handleChange("garage")}
               checked={state.garage}
               className="form-checkbox"
@@ -109,7 +109,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="parking"
               name="parking"
-              value="parking"
+              value="true"
               onChange={handleChange("parking")}
               checked={state.parking}
               className="form-checkbox"
@@ -121,7 +121,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="furnace"
               name="furnace"
-              value="furnace"
+              value="true"
               onChange={handleChange("furnace")}
               checked={state.furnace}
               className="form-checkbox"
@@ -133,7 +133,7 @@ export default function AmenitiesSelection({ state, handleChange }) {
               type="checkbox"
               id="internet"
               name="internet"
-              value="internet"
+              value="true"
               onChange={handleChange("internet")}
               checked={state.internet}
               className="form-checkbox"
