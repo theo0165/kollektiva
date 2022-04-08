@@ -4,6 +4,19 @@ export default function RestrictionSelection({ state, handleChange }) {
     <div className="col-10">
       <h1 className="form-title">Vem får hyra bostaden?</h1>
       <p className="form-subtitle">Beskriv din framtida hyresgäst.</p>
+      <div className="input-container">
+        <label className="form-label" htmlFor="income">
+          Lägsta årsinkomst
+        </label>
+        <input
+          type="number"
+          className="form-control"
+          id="income"
+          name="income"
+          onChange={handleChange("income")}
+          checked={state.income}
+        />
+      </div>
       <div className="checkbox-outer">
         <div className="checkbox-buttons">
           <div className="input-container">

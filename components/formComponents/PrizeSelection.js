@@ -5,7 +5,7 @@ export default function PrizeSelection({ state, handleChange }) {
   const [suggestedPrice, setSuggestedPrice] = useState(0);
 
   return (
-    <div>
+    <div className="col-10">
       <h1 className="form-title">Hur mycket kostar bostaden?</h1>
       <p className="form-subtitle">
         Ange vad som ingår i månadshyran och den totala månadshyran.
@@ -74,22 +74,27 @@ export default function PrizeSelection({ state, handleChange }) {
           </div>
         </div>
       </div>
-      <div className="prizeContainer"></div>
-      <p className="form-subtitle">Rekommenderad månadshyra</p>
-      <p>
-        Baserat på informationen du har fyllt i är den rekommenderade
-        månadshyran:{" "}
-      </p>
-      <b>{suggestedPrice} kr.</b>
-      <input
-        type="text"
-        id="monthlyRent"
-        name="monthlyRent"
-        value="monthlyRent"
-        onChange={handleChange("monthlyRent")}
-        checked={state.monthlyRent}
-      />
-      <label htmlFor="monthlyRent">Månadshyra</label>
+      <div className="prize-container">
+        <h3 className="form-subtitle">Rek. månadshyra</h3>
+        <p>
+          Baserat på informationen du har fyllt i är den rekommenderade
+          månadshyran:
+        </p>
+        <h4>18 000 - 20 000kr</h4>
+      </div>
+      <div className="input-container">
+        <label className="form-label" htmlFor="monthlyRent">
+          Månadshyra
+        </label>
+        <input
+          type="number"
+          className="form-control"
+          id="monthlyRent"
+          name="monthlyRent"
+          onChange={handleChange("monthlyRent")}
+          checked={state.monthlyRent}
+        />
+      </div>
     </div>
   );
 }
