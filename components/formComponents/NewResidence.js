@@ -16,39 +16,14 @@ import Preview from "./Preview";
 import Success from "./Success";
 import RestrictionSelection from "./RestrictionSelection";
 
-export default function NewResidence({ step, nextStep, prevStep }) {
-  const [state, setState] = useState({
-    rent: "",
-    type: "",
-    rooms: "",
-    size: "",
-    people: "",
-    address: "",
-    timeStart: "",
-    timeEnd: "",
-    furniture: "",
-    garden: "",
-    gardenEquipment: "",
-    heat: "",
-    balcony: "",
-    elevator: "",
-    air: "",
-    dishWasher: "",
-    washingMachine: "",
-    dryer: "",
-    bathTub: "",
-    garage: "",
-    parking: "",
-    furnace: "",
-    internet: "",
-    description: "",
-  });
-
-  // handle field change
-  const handleChange = (input) => (e) => {
-    setState({ ...state, [input]: e.target.value });
-  };
-
+export default function NewResidence({
+  step,
+  nextStep,
+  prevStep,
+  handleChange,
+  state,
+  setState,
+}) {
   switch (step) {
     case 1:
       return <PartSelection state={state} handleChange={handleChange} />;

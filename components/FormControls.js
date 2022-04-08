@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import styles from "../styles/FormControls.module.scss";
 
-const FormControls = ({ maxSteps, step, nextStep, prevStep }) => {
+const FormControls = ({ maxSteps, step, nextStep, prevStep, publish }) => {
   const router = useRouter();
 
   const stepDots = [];
@@ -42,7 +42,9 @@ const FormControls = ({ maxSteps, step, nextStep, prevStep }) => {
           </button>
         )}
         {step + 1 > maxSteps ? (
-          <button className="btn btn-success">Publicera</button>
+          <button className="btn btn-success" onClick={publish}>
+            Publicera
+          </button>
         ) : (
           <button onClick={nextStep} className="btn btn-primary">
             Nästa
