@@ -11,42 +11,15 @@ export default function Home() {
   const maxSteps = 14;
   const [step, setStep] = useState(1);
 
-  const [state, setState] = useState({
-    rent: "",
-    type: "",
-    rooms: "",
-    size: "",
-    people: "",
-    address: "",
-    timeStart: "",
-    timeEnd: "",
-    furniture: "",
-    garden: "",
-    gardenEquipment: "",
-    heatType: "",
-    balcony: "",
-    elevator: "",
-    air: "",
-    dishWasher: "",
-    washingMachine: "",
-    dryer: "",
-    bathTub: "",
-    garage: "",
-    parking: "",
-    furnace: "",
-    internet: "",
-    description: "",
-    heating: "",
-    water: "",
-    electricity: "",
-    broadband: "",
-    garbage: "",
-    monthlyRent: "",
-  });
+  const [state, setState] = useState({});
 
   // handle field change
   const handleChange = (input) => (e) => {
     setState({ ...state, [input]: e.target.value });
+  };
+
+  const manualChange = (name, value) => {
+    setState({ ...state, [name]: value });
   };
 
   // go back to previous step
@@ -59,7 +32,9 @@ export default function Home() {
     setStep(step + 1);
   };
 
-  const publish = () => {};
+  const publish = () => {
+    console.log(state);
+  };
 
   return (
     <div className={styles.container}>
@@ -71,6 +46,7 @@ export default function Home() {
           handleChange={handleChange}
           state={state}
           setState={setState}
+          manualChange={manualChange}
         />
       </div>
       <FormControls

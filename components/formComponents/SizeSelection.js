@@ -1,5 +1,5 @@
 //step 4, choose how many residents are allowed + how many rooms and sqm
-export default function SizeSelection({ state, handleChange }) {
+export default function SizeSelection({ state, handleChange, manualChange }) {
   return (
     <div className="col-10">
       <h1 className="form-title">Hur stor är bostaden?</h1>
@@ -14,7 +14,7 @@ export default function SizeSelection({ state, handleChange }) {
           className="form-control"
           id="rooms"
           name="rooms"
-          onChange={handleChange("rooms")}
+          onChange={(e) => manualChange("rooms", parseInt(e.target.value))}
           defaultValue={state.rooms}
         />
         <label className="form-label" htmlFor="size">
@@ -25,7 +25,7 @@ export default function SizeSelection({ state, handleChange }) {
           type="number"
           id="size"
           name="size"
-          onChange={handleChange("size")}
+          onChange={(e) => manualChange("size", parseInt(e.target.value))}
           defaultValue={state.size}
         />
         <label className="form-label" htmlFor="rooms">
@@ -36,19 +36,19 @@ export default function SizeSelection({ state, handleChange }) {
           type="number"
           id="biarea"
           name="biarea"
-          onChange={handleChange("biarea")}
+          onChange={(e) => manualChange("biarea", parseInt(e.target.value))}
           defaultValue={state.biarea}
         />
-        <label className="form-label" htmlFor="tomt">
+        <label className="form-label" htmlFor="plot">
           Tomt (m²)
         </label>
         <input
           required={true}
           type="number"
-          id="tomt"
-          name="tomt"
-          onChange={handleChange("tomt")}
-          defaultValue={state.tomt}
+          id="plot"
+          name="plot"
+          onChange={(e) => manualChange("plot", parseInt(e.target.value))}
+          defaultValue={state.plot}
         />
       </div>
       <p className="form-subtitle">Hur många kan bo i bostaden?</p>
@@ -60,8 +60,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeOne"
             name="people"
             value="1"
-            onChange={handleChange("people")}
-            checked={state.people === "1" ? true : false}
+            onChange={(e) => manualChange("people", 1)}
+            checked={state.people === 1 ? true : false}
           />
           <label htmlFor="sizeOne">1</label>
         </div>
@@ -72,8 +72,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeTwo"
             name="people"
             value="2"
-            onChange={handleChange("people")}
-            checked={state.people === "2" ? true : false}
+            onChange={(e) => manualChange("people", 2)}
+            checked={state.people === 2 ? true : false}
           />
           <label htmlFor="sizeTwo">2</label>
         </div>
@@ -84,8 +84,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeThree"
             name="people"
             value="3"
-            onChange={handleChange("people")}
-            checked={state.people === "3" ? true : false}
+            onChange={(e) => manualChange("people", 3)}
+            checked={state.people === 3 ? true : false}
           />
           <label htmlFor="sizeThree">3</label>
         </div>
@@ -96,8 +96,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeFour"
             name="people"
             value="4"
-            onChange={handleChange("people")}
-            checked={state.people === "4" ? true : false}
+            onChange={(e) => manualChange("people", 4)}
+            checked={state.people === 4 ? true : false}
           />
           <label htmlFor="sizeFour">4</label>
         </div>
@@ -108,8 +108,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeFive"
             name="people"
             value="5"
-            onChange={handleChange("people")}
-            checked={state.people === "5" ? true : false}
+            onChange={(e) => manualChange("people", 5)}
+            checked={state.people === 5 ? true : false}
           />
           <label htmlFor="sizeFive">5</label>
         </div>
@@ -120,8 +120,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeSix"
             name="people"
             value="6"
-            onChange={handleChange("people")}
-            checked={state.people === "6" ? true : false}
+            onChange={(e) => manualChange("people", 6)}
+            checked={state.people === 6 ? true : false}
           />
           <label htmlFor="sizeSix">6</label>
         </div>
@@ -132,8 +132,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeSeven"
             name="people"
             value="7"
-            onChange={handleChange("people")}
-            checked={state.people === "7" ? true : false}
+            onChange={(e) => manualChange("people", 7)}
+            checked={state.people === 7 ? true : false}
           />
           <label htmlFor="sizeSeven">7</label>
         </div>
@@ -144,8 +144,8 @@ export default function SizeSelection({ state, handleChange }) {
             id="sizeEight"
             name="people"
             value="8"
-            onChange={handleChange("people")}
-            checked={state.people === "8" ? true : false}
+            onChange={(e) => manualChange("people", 8)}
+            checked={state.people === 8 ? true : false}
           />
           <label htmlFor="sizeEight">8</label>
         </div>
