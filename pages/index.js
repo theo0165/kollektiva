@@ -7,7 +7,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import { supabase } from "../utils/initSupabase";
 
-export default function Home() {
+export default function Home({ user }) {
   const maxSteps = 14;
   const [step, setStep] = useState(1);
 
@@ -32,8 +32,19 @@ export default function Home() {
     setStep(step + 1);
   };
 
-  const publish = () => {
-    console.log(state);
+  const publish = async () => {
+    if (user && user.role === "authenticated") {
+      try {
+        const r = await supabase
+          .from("residence")
+          .insert({ ...state, user_id: user.id });
+        console.log(r);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      console.log("No user");
+    }
   };
 
   return (
@@ -68,3 +79,13 @@ Home.getLayout = function getLayout(page) {
     </>
   );
 };
+
+export async function getServerSideProps({ req }) {
+  const { data, user, error } = await supabase.auth.api.getUserByCookie(req);
+
+  return {
+    props: {
+      user: user,
+    },
+  };
+}
