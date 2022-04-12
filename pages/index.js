@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.scss";
 import { useState } from "react";
 import Header from "../components/Header";
 import { supabase } from "../utils/initSupabase";
+import Flash from "../components/Flash";
 
 export default function Home({ user }) {
   const maxSteps = 14;
