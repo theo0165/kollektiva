@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import { supabase } from "../utils/initSupabase";
 import Flash from "../components/Flash";
 import { useRouter } from "next/router";
-import Hashids from "hashids";
+import hashids from "../utils/hashids";
 
 export default function Home({ user }) {
   const maxSteps = 14;
@@ -16,7 +16,6 @@ export default function Home({ user }) {
   const [state, setState] = useState({});
   const [showUploadError, setShowUploadError] = useState(false);
   const router = useRouter();
-  const hashids = new Hashids("kollektiva-residence-id", 10);
 
   // handle field change
   const handleChange = (input) => (e) => {
