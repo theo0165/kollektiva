@@ -7,12 +7,16 @@ import { useState } from "react";
 import Header from "../components/Header";
 import { supabase } from "../utils/initSupabase";
 import Flash from "../components/Flash";
+import { useRouter } from "next/router";
+import Hashids from "hashids";
 
 export default function Home({ user }) {
   const maxSteps = 14;
   const [step, setStep] = useState(1);
-
   const [state, setState] = useState({});
+  const [showUploadError, setShowUploadError] = useState(false);
+  const router = useRouter();
+  const hashids = new Hashids("kollektiva-residence-id", 10);
 
   // handle field change
   const handleChange = (input) => (e) => {
@@ -35,11 +39,20 @@ export default function Home({ user }) {
 
   const publish = async () => {
     if (user && user.role === "authenticated") {
+      setShowUploadError(false);
       try {
         const r = await supabase
           .from("residence")
           .insert({ ...state, user_id: user.id });
-        console.log(r);
+
+        if (r.error) {
+          setShowUploadError(true);
+          console.log(r.error);
+          return;
+        }
+
+        console.log(r, hashids.encode(r.data[0].id));
+        router.push(`/residence/${hashids.encode(r.data[0].id)}`);
       } catch (e) {
         console.log(e);
       }
@@ -50,6 +63,9 @@ export default function Home({ user }) {
 
   return (
     <div className={styles.container}>
+      {showUploadError && (
+        <Flash type="error" message="Något gick fel, försök igen senare" />
+      )}
       <div style={{ marginBottom: "200px" }}>
         <NewResidence
           step={step}
