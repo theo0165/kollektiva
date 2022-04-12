@@ -1,25 +1,29 @@
 //step 12 choose whether or not you wish to have a smoking free home, pet free home etc
-export default function RestrictionSelection({ state, handleChange }) {
+export default function RestrictionSelection({
+  state,
+  handleChange,
+  manualChange,
+}) {
   return (
     <div className="col-10">
       <h1 className="form-title">Vem får hyra bostaden?</h1>
       <p className="form-subtitle">Beskriv din framtida hyresgäst.</p>
+      <div className="input-container">
+        <label className="form-label" htmlFor="income">
+          Lägsta årsinkomst
+        </label>
+        <input
+          type="number"
+          className="form-control"
+          id="income"
+          name="income"
+          onChange={(e) => manualChange("income", parseInt(e.target.value))}
+          defaultValue={state.income}
+        />
+      </div>
       <div className="checkbox-outer">
         <div className="checkbox-buttons">
-          <div className="checkbox">
-            <label className="form-label" htmlFor="income">
-              Lägsta tillåtna årsinkomst i kronor
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="income"
-              name="income"
-              onChange={handleChange("income")}
-              checked={state.income}
-            />
-          </div>
-          <p className="form-subtitle">Bostaden får hyras av: </p>
+          <p className="form-label">Bostaden får hyras av: </p>
           <div className="checkbox-container garden-container">
             <div className="checkbox">
               <input
@@ -27,9 +31,8 @@ export default function RestrictionSelection({ state, handleChange }) {
                 className="form-checkbox"
                 id="men"
                 name="men"
-                value="men"
-                onChange={handleChange("men")}
-                checked={state.men === "men" ? true : false}
+                onChange={(e) => manualChange("men", e.target.checked)}
+                checked={state.men}
               />
               <label className="form-label" htmlFor="men">
                 Män
@@ -41,9 +44,8 @@ export default function RestrictionSelection({ state, handleChange }) {
                 className="form-checkbox"
                 id="women"
                 name="women"
-                value="women"
-                onChange={handleChange("women")}
-                checked={state.women === "women" ? true : false}
+                onChange={(e) => manualChange("women", e.target.checked)}
+                checked={state.women}
               />
               <label className="form-label" htmlFor="women">
                 Kvinnor
@@ -55,9 +57,8 @@ export default function RestrictionSelection({ state, handleChange }) {
                 className="form-checkbox"
                 id="nonBinary"
                 name="nonBinary"
-                value="nonBinary"
-                onChange={handleChange("nonBinary")}
-                checked={state.nonBinary === "nonBinary" ? true : false}
+                onChange={(e) => manualChange("nonBinary", e.target.checked)}
+                checked={state.nonBinary}
               />
               <label className="form-label" htmlFor="nonBinary">
                 Ickebinära
@@ -67,30 +68,28 @@ export default function RestrictionSelection({ state, handleChange }) {
               <input
                 type="checkbox"
                 className="form-checkbox"
-                id="all"
-                name="all"
-                value="all"
-                onChange={handleChange("all")}
-                checked={state.all === "all" ? true : false}
+                id="rentByAll"
+                name="rentByAll"
+                onChange={(e) => manualChange("rentByAll", e.target.checked)}
+                checked={state.rentByAll}
               />
-              <label className="form-label" htmlFor="all">
+              <label className="form-label" htmlFor="rentByAll">
                 Alla
               </label>
             </div>
           </div>
         </div>
       </div>
-      <p className="form-subtitle">Är husdjur tillåtna i bostaden?</p>
+      <p className="form-label">Är husdjur tillåtna i bostaden?</p>
       <div className="radio-buttons has-margin">
         <div>
           <input
             type="radio"
             className="form-radio"
             id="petsYes"
-            name="petsYes"
-            value="petsYes"
-            onChange={handleChange("petsYes")}
-            checked={state.petsYes === "petsYes" ? true : false}
+            name="pets"
+            onChange={(e) => manualChange("pets", true)}
+            checked={state.pets === true}
           />
           <label className="form-label" htmlFor="petsYes">
             Ja
@@ -101,17 +100,16 @@ export default function RestrictionSelection({ state, handleChange }) {
             type="radio"
             className="form-radio"
             id="petsNo"
-            name="petsNo"
-            value="petsNo"
-            onChange={handleChange("petsNo")}
-            checked={state.petsNo === "petsNo" ? true : false}
+            name="pets"
+            onChange={(e) => manualChange("pets", false)}
+            checked={state.pets === false}
           />
           <label className="form-label" htmlFor="petsNo">
             Nej
           </label>
         </div>
       </div>
-      <p className="form-subtitle">
+      <p className="form-label">
         Är rökning tillåtet i anslutning till bostaden?
       </p>
       <div className="radio-buttons has-margin">
@@ -120,10 +118,10 @@ export default function RestrictionSelection({ state, handleChange }) {
             type="radio"
             className="form-radio"
             id="smokingYes"
-            name="smokingYes"
-            value="smokingYes"
-            onChange={handleChange("smokingYes")}
-            checked={state.smokingYes === "smokingYes" ? true : false}
+            name="smoking"
+            value="true"
+            onChange={(e) => manualChange("smoking", true)}
+            checked={state.smoking === true}
           />
           <label className="form-label" htmlFor="smokingYes">
             Ja
@@ -134,10 +132,10 @@ export default function RestrictionSelection({ state, handleChange }) {
             type="radio"
             className="form-radio"
             id="smokingNo"
-            name="smokingNo"
-            value="smokingNo"
-            onChange={handleChange("smokingNo")}
-            checked={state.smokingNo === "smokingNo" ? true : false}
+            name="smoking"
+            value="false"
+            onChange={(e) => manualChange("smoking", false)}
+            checked={state.smoking === false}
           />
           <label className="form-label" htmlFor="smokingNo">
             Nej

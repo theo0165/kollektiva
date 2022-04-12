@@ -30,7 +30,7 @@ export default function TimeSelection({ state, handleChange }) {
             id="timeStart"
             name="timeStart"
             onChange={handleChange("timeStart")}
-            checked={state.timeStart}
+            defaultValue={state.timeStart}
             className="form-control"
           />
         </div>
@@ -43,7 +43,7 @@ export default function TimeSelection({ state, handleChange }) {
             id="timeEnd"
             name="timeEnd"
             onChange={handleChange("timeEnd")}
-            checked={state.timeEnd}
+            defaultValue={state.timeEnd}
             className="form-control"
           />
         </div>

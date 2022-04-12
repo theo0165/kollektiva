@@ -60,6 +60,7 @@
 .checkbox-buttons {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .checkbox {
@@ -119,4 +120,23 @@ input[type="number"] {
 .checkbox-outer {
   display: flex;
   justify-content: center;
+}
+
+.prize-container {
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  color: $primaryBlue;
+  font-size: 42px;
+  margin: 20px;
+  margin-bottom: 30px;
 }

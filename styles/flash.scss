@@ -1,0 +1,25 @@
+.flash {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.flash-error,
+.flash-success {
+  padding: 12px;
+
+  svg {
+    margin: 10px 10px;
+    vertical-align: middle;
+  }
+}
+
+.flash-error {
+  color: white;
+  background-color: $utilityFailure;
+}
+
+.flash-success {
+  color: white;
+  background-color: $utilitySuccess;
+}

@@ -1,5 +1,5 @@
 //step 8 choose whether or not your rental has a garden
-export default function GardenSelection({ state, handleChange }) {
+export default function GardenSelection({ state, handleChange, manualChange }) {
   return (
     <div className="col-10">
       <h1 className="form-title">Har bostaden trädgård?</h1>
@@ -10,9 +10,8 @@ export default function GardenSelection({ state, handleChange }) {
           className="form-radio"
           id="yes"
           name="garden"
-          value="yes"
-          onChange={handleChange("garden")}
-          checked={state.garden === "yes" ? true : false}
+          onChange={(e) => manualChange("garden", true)}
+          checked={state.garden === true}
         />
         <label className="form-label" htmlFor="yes">
           Ja
@@ -22,9 +21,8 @@ export default function GardenSelection({ state, handleChange }) {
           className="form-radio"
           id="no"
           name="garden"
-          value="no"
-          onChange={handleChange("garden")}
-          checked={state.garden === "no" ? true : false}
+          onChange={(e) => manualChange("garden", false)}
+          checked={state.garden === false}
         />
         <label className="form-label" htmlFor="no">
           Nej
@@ -40,9 +38,8 @@ export default function GardenSelection({ state, handleChange }) {
             className="form-radio"
             id="yesGarden"
             name="gardenEquipment"
-            value="yesGarden"
-            onChange={handleChange("gardenEquipment")}
-            checked={state.gardenEquipment === "yesGarden" ? true : false}
+            onChange={(e) => manualChange("gardenEquipment", true)}
+            checked={state.gardenEquipment === true}
           />
           <label className="form-label" htmlFor="yesGarden">
             Ja
@@ -54,9 +51,8 @@ export default function GardenSelection({ state, handleChange }) {
             className="form-radio"
             id="noGarden"
             name="gardenEquipment"
-            value="noGarden"
-            onChange={handleChange("gardenEquipment")}
-            checked={state.gardenEquipment === "noGarden" ? true : false}
+            onChange={(e) => manualChange("gardenEquipment", false)}
+            checked={state.gardenEquipment === false}
           />
           <label className="form-label" htmlFor="noGarden">
             Nej
