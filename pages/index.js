@@ -3,7 +3,7 @@ import Image from "next/image";
 import NewResidence from "../components/formComponents/NewResidence";
 import FormControls from "../components/FormControls";
 import styles from "../styles/Home.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { supabase } from "../utils/initSupabase";
 import Flash from "../components/Flash";
@@ -47,17 +47,16 @@ export default function Home({ user }) {
 
         if (r.error) {
           setShowUploadError(true);
-          console.log(r.error);
           return;
         }
 
-        console.log(r, hashids.encode(r.data[0].id));
         router.push(`/residence/${hashids.encode(r.data[0].id)}`);
       } catch (e) {
-        console.log(e);
+        setShowUploadError(true);
+        return;
       }
     } else {
-      console.log("No user");
+      router.push("/login");
     }
   };
 
@@ -99,6 +98,15 @@ Home.getLayout = function getLayout(page) {
 
 export async function getServerSideProps({ req }) {
   const { data, user, error } = await supabase.auth.api.getUserByCookie(req);
+
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {
