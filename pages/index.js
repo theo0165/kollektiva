@@ -86,6 +86,7 @@ export default function Home({ user }) {
 
         if (r.error) {
           setShowUploadError(true);
+          console.log(r);
           return;
         }
 
