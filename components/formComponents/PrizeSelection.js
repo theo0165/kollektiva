@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // step 11 choose prize for your residence
-export default function PrizeSelection({ state, handleChange }) {
+export default function PrizeSelection({ state, handleChange, manualChange }) {
   const [suggestedPrice, setSuggestedPrice] = useState(0);
 
   return (
@@ -18,8 +18,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="heating"
               name="heating"
-              value="true"
-              onChange={handleChange("heating")}
+              onChange={(e) => manualChange("heating", e.target.checked)}
               checked={state.heating}
             />
             <label htmlFor="heating">Värme</label>
@@ -30,8 +29,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="water"
               name="water"
-              value="true"
-              onChange={handleChange("water")}
+              onChange={(e) => manualChange("water", e.target.checked)}
               checked={state.water}
             />
             <label htmlFor="water">Vatten</label>
@@ -42,8 +40,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="electricity"
               name="electricity"
-              value="true"
-              onChange={handleChange("electricity")}
+              onChange={(e) => manualChange("electricity", e.target.checked)}
               checked={state.electricity}
             />
             <label htmlFor="electricity">El</label>
@@ -54,8 +51,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="broadband"
               name="broadband"
-              value="true"
-              onChange={handleChange("broadband")}
+              onChange={(e) => manualChange("broadband", e.target.checked)}
               checked={state.broadband}
             />
             <label htmlFor="broadband">Bredband</label>
@@ -66,8 +62,7 @@ export default function PrizeSelection({ state, handleChange }) {
               className="form-checkbox"
               id="garbage"
               name="garbage"
-              value="true"
-              onChange={handleChange("garbage")}
+              onChange={(e) => manualChange("garbage", e.target.checked)}
               checked={state.garbage}
             />
             <label htmlFor="garbage">Sophantering</label>
@@ -91,7 +86,9 @@ export default function PrizeSelection({ state, handleChange }) {
           className="form-control"
           id="monthlyRent"
           name="monthlyRent"
-          onChange={handleChange("monthlyRent")}
+          onChange={(e) =>
+            manualChange("monthlyRent", parseInt(e.target.value))
+          }
           defaultValue={state.monthlyRent}
           required={true}
         />

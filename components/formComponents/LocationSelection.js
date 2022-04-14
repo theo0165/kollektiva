@@ -3,7 +3,11 @@ import { useState } from "react";
 import styles from "../../styles/formComponents/LocationSelection.module.scss";
 
 //step 5 choose where in the country the rental is located
-export default function LocationSelection({ state, handleChange, setState }) {
+export default function LocationSelection({
+  state,
+  handleChange,
+  manualChange,
+}) {
   const [address, setAddress] = useState(state.address);
   const Map = dynamic(() => import("../Map"), { ssr: false });
 
@@ -21,7 +25,7 @@ export default function LocationSelection({ state, handleChange, setState }) {
     }
 
     setAddress(value);
-    setState({ ...state, ["address"]: value });
+    manualChange("address", address);
   };
 
   return (
