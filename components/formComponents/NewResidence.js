@@ -20,6 +20,7 @@ export default function NewResidence({
   step,
   nextStep,
   prevStep,
+  setStep,
   handleChange,
   state,
   setState,
@@ -87,7 +88,9 @@ export default function NewResidence({
         />
       );
     case 13:
-      return <Preview state={state} handleChange={handleChange} />;
+      return (
+        <Preview state={state} handleChange={handleChange} setStep={setStep} />
+      );
     case 14:
       return <Success state={state} handleChange={handleChange} />;
     default:

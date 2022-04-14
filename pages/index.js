@@ -110,6 +110,7 @@ export default function Home({ user }) {
           step={step}
           nextStep={nextStep}
           prevStep={prevStep}
+          setStep={setStep}
           handleChange={handleChange}
           state={state}
           setState={setState}
