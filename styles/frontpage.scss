@@ -1,0 +1,48 @@
+@import "./variables/variables.scss";
+
+.quote {
+  background: $primaryBlue;
+  color: white;
+  padding: 30px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: $primaryBlue;
+  text-align: center;
+}
+
+h5 {
+  color: $primaryBlue;
+  font-size: 22px;
+}
+
+.reason-text {
+  font-style: italic;
+}
+.last {
+  margin-bottom: 40px;
+}
+.reason h5 {
+  margin: 0;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial h5 {
+  margin: 3px;
+  margin-top: 20px;
+}
+.couple-image {
+  border-radius: 50%;
+}
+.testimonial-text {
+  padding-left: 15px;
+  padding-right: 15px;
+}
