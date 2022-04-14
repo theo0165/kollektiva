@@ -13,7 +13,47 @@ import hashids from "../utils/hashids";
 export default function Home({ user }) {
   const maxSteps = 14;
   const [step, setStep] = useState(1);
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    address: "",
+    air: false,
+    balcony: false,
+    bathTub: false,
+    biarea: 0,
+    broadband: false,
+    description: "",
+    dishWasher: false,
+    dryer: false,
+    electricity: false,
+    elevator: false,
+    furnace: false,
+    furniture: "",
+    garage: false,
+    garbage: false,
+    garden: null,
+    gardenEquipment: null,
+    heat: "",
+    heating: false,
+    income: 0,
+    internet: false,
+    men: false,
+    monthlyRent: 0,
+    nonBinary: false,
+    parking: false,
+    people: 0,
+    pets: null,
+    plot: 0,
+    rent: "",
+    rentByAll: false,
+    rooms: 0,
+    size: 0,
+    smoking: null,
+    timeEnd: "",
+    timeStart: "",
+    type: "",
+    washingMachine: false,
+    water: false,
+    women: false,
+  });
   const [showUploadError, setShowUploadError] = useState(false);
   const router = useRouter();
 

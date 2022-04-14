@@ -15,7 +15,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
           id="rooms"
           name="rooms"
           onChange={(e) => manualChange("rooms", parseInt(e.target.value))}
-          defaultValue={state.rooms}
+          defaultValue={state.rooms != 0 ? state.rooms.toString() : ""}
         />
         <label className="form-label" htmlFor="size">
           Boarea (m²)
@@ -26,7 +26,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
           id="size"
           name="size"
           onChange={(e) => manualChange("size", parseInt(e.target.value))}
-          defaultValue={state.size}
+          defaultValue={state.size != 0 ? state.size.toString() : ""}
         />
         <label className="form-label" htmlFor="rooms">
           Biarea (m²)
@@ -37,7 +37,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
           id="biarea"
           name="biarea"
           onChange={(e) => manualChange("biarea", parseInt(e.target.value))}
-          defaultValue={state.biarea}
+          defaultValue={state.biarea != 0 ? state.biarea.toString() : ""}
         />
         <label className="form-label" htmlFor="plot">
           Tomt (m²)
@@ -48,7 +48,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
           id="plot"
           name="plot"
           onChange={(e) => manualChange("plot", parseInt(e.target.value))}
-          defaultValue={state.plot}
+          defaultValue={state.plot != 0 ? state.plot.toString() : ""}
         />
       </div>
       <p className="form-subtitle">Hur många kan bo i bostaden?</p>

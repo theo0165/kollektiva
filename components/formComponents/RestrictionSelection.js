@@ -18,7 +18,7 @@ export default function RestrictionSelection({
           id="income"
           name="income"
           onChange={(e) => manualChange("income", parseInt(e.target.value))}
-          defaultValue={state.income}
+          defaultValue={state.income != 0 ? state.income.toString() : ""}
         />
       </div>
       <div className="checkbox-outer">
