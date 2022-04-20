@@ -23,6 +23,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
         <input
           required={true}
           type="number"
+          className="form-control"
           id="size"
           name="size"
           onChange={(e) => manualChange("size", parseInt(e.target.value))}
@@ -35,6 +36,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
           required={true}
           type="number"
           id="biarea"
+          className="form-control"
           name="biarea"
           onChange={(e) => manualChange("biarea", parseInt(e.target.value))}
           defaultValue={state.biarea != 0 ? state.biarea.toString() : ""}
@@ -45,6 +47,7 @@ export default function SizeSelection({ state, handleChange, manualChange }) {
         <input
           required={true}
           type="number"
+          className="form-control"
           id="plot"
           name="plot"
           onChange={(e) => manualChange("plot", parseInt(e.target.value))}

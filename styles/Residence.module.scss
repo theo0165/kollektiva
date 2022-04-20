@@ -13,6 +13,67 @@
   cursor: pointer;
 }
 
+.section {
+  div {
+    padding: 16px;
+    background: white;
+    border-radius: 5px;
+  }
+}
+
+.sectionBlock {
+  margin-bottom: 24px;
+  &.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.sizeSection {
+    > div {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    div {
+      padding: 0;
+    }
+
+    p:not(.sectionSubtitle) {
+      color: $primaryBlue;
+    }
+  }
+
+  svg {
+    color: $primaryBlue;
+    margin-right: 24px;
+  }
+
+  p:not(.sectionSubtitle) {
+    display: inline-block;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.blue {
+  color: $primaryBlue;
+}
+
+.sectionSubtitle {
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.rentSectionBlock {
+  flex-direction: column;
+  justify-content: end;
+}
+
 .addressStreet {
   font-size: 36px;
   font-weight: bold;
@@ -31,8 +92,93 @@
   object-fit: cover;
 }
 
-.section {
-  padding: 16px;
-  background: white;
-  border-radius: 5px;
+.description {
+  font-size: 18px;
+}
+
+.halfSplit {
+}
+
+.timeSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  div {
+    padding: 0;
+    text-align: center;
+
+    p:not(.sectionBigSubtitle) {
+      font-size: 24px;
+      font-weight: 700;
+      color: $primaryBlue;
+      margin: 8px 0 0 0;
+    }
+
+    .sectionBigSubtitle {
+      font-size: 18px;
+      margin-bottom: 8px;
+      margin-top: 0;
+      font-weight: 600;
+    }
+  }
+}
+
+.section .sectionBlock .heating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  img {
+    margin-right: 8px;
+  }
+}
+
+.section .furnitureSection .furniture {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.includedSection {
+  .included {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    > div {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 16px 8px;
+
+      &:first-of-type {
+        padding: 16px 8px 16px 0px;
+      }
+
+      &:last-of-type {
+        padding: 16px 0px 16px 8px;
+      }
+
+      svg {
+        margin: 0;
+      }
+    }
+  }
 }

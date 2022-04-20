@@ -57,19 +57,21 @@ const Residence = ({ data, isPreview, setStep }) => {
         )}
       </div>
       <div className={`${styles.imageContainer} ${styles.section}`}>
-        <div className={styles.imageSlider}>
-          <img src="https://via.placeholder.com/410x310" />
-        </div>
-        <div className={styles.sliderControls}>
-          <div className={styles.sliderButton}>
-            <BsArrowLeftShort />
+        <div>
+          <div className={styles.imageSlider}>
+            <img src="https://via.placeholder.com/410x310" />
           </div>
-          <div className={styles.sliderNumbers}>1/10</div>
-          <div className={styles.sliderButton}>
-            <BsArrowRightShort />
+          <div className={styles.sliderControls}>
+            <div className={styles.sliderButton}>
+              <BsArrowLeftShort />
+            </div>
+            <div className={styles.sliderNumbers}>1/10</div>
+            <div className={styles.sliderButton}>
+              <BsArrowRightShort />
+            </div>
           </div>
+          <p className={styles.description}>{data.description}</p>
         </div>
-        <p className={styles.description}>{data.description}</p>
       </div>
       {isPreview && (
         <button onClick={() => setStep(10)} className={styles.button}>
@@ -77,7 +79,7 @@ const Residence = ({ data, isPreview, setStep }) => {
         </button>
       )}
       <div className={styles.section}>
-        <div className={styles.sectionBlock}>
+        <div className={`${styles.sectionBlock} ${styles.flex}`}>
           {data.rent === "whole" && (
             <>
               <BsHouseDoorFill size="40px" />
@@ -91,27 +93,32 @@ const Residence = ({ data, isPreview, setStep }) => {
             </>
           )}
         </div>
-        <button onClick={() => setStep(1)} className={styles.button}>
-          Ändra till &quot;
-          {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}&quot;
-        </button>
       </div>
+      <button onClick={() => setStep(1)} className={styles.button}>
+        Ändra till &quot;
+        {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}&quot;
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Hyra</h2>
-        <div className={styles.sectionBlock}>
-          <p className={styles.sectionInfo}>
+        <div
+          className={`${styles.sectionBlock} ${styles.rentSectionBlock} ${styles.flex}`}
+        >
+          <p
+            className={`${styles.sectionInfo} ${styles.blue}`}
+            style={{ fontSize: "36px" }}
+          >
             {formatRent(data.monthlyRent)}
             kr
           </p>
           <p className={styles.sectionSubtitle}>Månadshyra</p>
         </div>
-        <button onClick={() => setStep(11)} className={styles.button}>
-          Ändra Hyra
-        </button>
       </div>
+      <button onClick={() => setStep(11)} className={styles.button}>
+        Ändra Hyra
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Storlek</h2>
-        <div className={styles.sectionBlock}>
+        <div className={`${styles.sectionBlock} ${styles.sizeSection}`}>
           <div className={styles.halfSplit}>
             <div>
               <p className={styles.sectionInfo}>{data.rooms}</p>
@@ -124,6 +131,8 @@ const Residence = ({ data, isPreview, setStep }) => {
               <p className={styles.sectionSubtitle}>Personer</p>
             </div>
           </div>
+        </div>
+        <div className={`${styles.sectionBlock} ${styles.sizeSection}`}>
           <div className={styles.threeSplit}>
             <div>
               <p className={styles.sectionInfo}>{data.size}&#13217;</p>
@@ -139,13 +148,13 @@ const Residence = ({ data, isPreview, setStep }) => {
             </div>
           </div>
         </div>
-        <button onClick={() => setStep(3)} className={styles.button}>
-          Ändra storlek
-        </button>
       </div>
+      <button onClick={() => setStep(3)} className={styles.button}>
+        Ändra storlek
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Uthyrningsdatum</h2>
-        <div className={styles.halfSplit}>
+        <div className={`${styles.halfSplit} ${styles.timeSection}`}>
           <div>
             <p className={styles.sectionBigSubtitle}>Flytta in</p>
             <p>{dateformat(new Date(data.timeStart), "dd/mm/yyyy")}</p>
@@ -155,10 +164,10 @@ const Residence = ({ data, isPreview, setStep }) => {
             <p>{dateformat(new Date(data.timeEnd), "dd/mm/yyyy")}</p>
           </div>
         </div>
-        <button onClick={() => setStep(5)} className={styles.button}>
-          Ändra uthyrningsdatum
-        </button>
       </div>
+      <button onClick={() => setStep(5)} className={styles.button}>
+        Ändra uthyrningsdatum
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Uppvärmning</h2>
         <div className={styles.sectionBlock}>
@@ -167,13 +176,13 @@ const Residence = ({ data, isPreview, setStep }) => {
             {heating()}
           </p>
         </div>
-        <button onClick={() => setStep(8)} className={styles.button}>
-          Ändra uppvärmning
-        </button>
       </div>
+      <button onClick={() => setStep(8)} className={styles.button}>
+        Ändra uppvärmning
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Möblering</h2>
-        <div className={styles.sectionBlock}>
+        <div className={`${styles.sectionBlock} ${styles.furnitureSection}`}>
           <div className={styles.furniture}>
             <MdChairAlt color="#23449B" size="40px" />
             <p>
@@ -183,13 +192,13 @@ const Residence = ({ data, isPreview, setStep }) => {
             </p>
           </div>
         </div>
-        <button onClick={() => setStep(6)} className={styles.button}>
-          Ändra möblering
-        </button>
       </div>
+      <button onClick={() => setStep(6)} className={styles.button}>
+        Ändra möblering
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Ingår i hyran</h2>
-        <div className={styles.sectionBlock}>
+        <div className={`${styles.sectionBlock} ${styles.includedSection}`}>
           <div className={styles.included}>
             {data.heating && (
               <div>
@@ -223,10 +232,10 @@ const Residence = ({ data, isPreview, setStep }) => {
             )}
           </div>
         </div>
-        <button onClick={() => setStep(11)} className={styles.button}>
-          Ändra vad som ingår
-        </button>
       </div>
+      <button onClick={() => setStep(11)} className={styles.button}>
+        Ändra vad som ingår
+      </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Bekvämligheter</h2>
         <div className={styles.sectionBlock}>
@@ -299,10 +308,10 @@ const Residence = ({ data, isPreview, setStep }) => {
             )}
           </div>
         </div>
-        <button onClick={() => setStep(9)} className={styles.button}>
-          Ändra bekvämligheter
-        </button>
       </div>
+      <button onClick={() => setStep(9)} className={styles.button}>
+        Ändra bekvämligheter
+      </button>
     </div>
   );
 };
