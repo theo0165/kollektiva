@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import hashids from "../../utils/hashids";
 
 export default function Home({ user }) {
-  const maxSteps = 14;
+  const maxSteps = 13;
   const [step, setStep] = useState(1);
   const [state, setState] = useState({
     address: "",

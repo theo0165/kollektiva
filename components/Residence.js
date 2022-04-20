@@ -5,12 +5,21 @@ import {
   BsHouseDoorFill,
   BsTrash,
 } from "react-icons/bs";
-import { MdChairAlt, MdBolt } from "react-icons/md";
+import { MdChairAlt, MdBolt, MdOutlineElevator } from "react-icons/md";
 import { GiWaterDrop } from "react-icons/gi";
 import { IoWifi } from "react-icons/io5";
 import HalfHouse from "../assets/icons/house_half.svg";
 import dateformat from "dateformat";
 import heatIcon from "../assets/icons/heating.svg";
+import benchIcon from "../assets/icons/bench.svg";
+import acIcon from "../assets/icons/ac.svg";
+import dishwasherIcon from "../assets/icons/dishwasher.svg";
+import washingMachineIcon from "../assets/icons/washingmachine.svg";
+import dryerIcon from "../assets/icons/dryer.svg";
+import bathtubIcon from "../assets/icons/bathtub.svg";
+import garageIcon from "../assets/icons/garage.svg";
+import parkingIcon from "../assets/icons/parking.svg";
+import furnaceIcon from "../assets/icons/furnace.svg";
 
 const Residence = ({ data, isPreview, setStep }) => {
   const addressArray = formatAddress(data.address);
@@ -42,14 +51,14 @@ const Residence = ({ data, isPreview, setStep }) => {
         <h2 className={styles.addressStreet}>{addressArray[0]}</h2>
         <p className={styles.addressPost}>{addressArray[1]}</p>
         {isPreview && (
-          <button className="residence-button" onClick={() => setStep(4)}>
+          <button className={styles.button} onClick={() => setStep(4)}>
             Ändra address
           </button>
         )}
       </div>
-      <div className={styles.imageContainer}>
+      <div className={`${styles.imageContainer} ${styles.section}`}>
         <div className={styles.imageSlider}>
-          <img src="" />
+          <img src="https://via.placeholder.com/410x310" />
         </div>
         <div className={styles.sliderControls}>
           <div className={styles.sliderButton}>
@@ -63,7 +72,9 @@ const Residence = ({ data, isPreview, setStep }) => {
         <p className={styles.description}>{data.description}</p>
       </div>
       {isPreview && (
-        <button onClick={() => setStep(10)}>Ändra bilder & beskrivning</button>
+        <button onClick={() => setStep(10)} className={styles.button}>
+          Ändra bilder & beskrivning
+        </button>
       )}
       <div className={styles.section}>
         <div className={styles.sectionBlock}>
@@ -80,7 +91,7 @@ const Residence = ({ data, isPreview, setStep }) => {
             </>
           )}
         </div>
-        <button onClick={() => setStep(1)}>
+        <button onClick={() => setStep(1)} className={styles.button}>
           Ändra till &quot;
           {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}&quot;
         </button>
@@ -94,7 +105,9 @@ const Residence = ({ data, isPreview, setStep }) => {
           </p>
           <p className={styles.sectionSubtitle}>Månadshyra</p>
         </div>
-        <button onClick={() => setStep(11)}>Ändra Hyra</button>
+        <button onClick={() => setStep(11)} className={styles.button}>
+          Ändra Hyra
+        </button>
       </div>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Storlek</h2>
@@ -126,7 +139,9 @@ const Residence = ({ data, isPreview, setStep }) => {
             </div>
           </div>
         </div>
-        <button onClick={() => setStep(3)}>Ändra storlek</button>
+        <button onClick={() => setStep(3)} className={styles.button}>
+          Ändra storlek
+        </button>
       </div>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Uthyrningsdatum</h2>
@@ -140,7 +155,9 @@ const Residence = ({ data, isPreview, setStep }) => {
             <p>{dateformat(new Date(data.timeEnd), "dd/mm/yyyy")}</p>
           </div>
         </div>
-        <button onClick={() => setStep(5)}>Ändra uthyrningsdatum</button>
+        <button onClick={() => setStep(5)} className={styles.button}>
+          Ändra uthyrningsdatum
+        </button>
       </div>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Uppvärmning</h2>
@@ -150,7 +167,9 @@ const Residence = ({ data, isPreview, setStep }) => {
             {heating()}
           </p>
         </div>
-        <button onClick={() => setStep(8)}>Ändra uppvärmning</button>
+        <button onClick={() => setStep(8)} className={styles.button}>
+          Ändra uppvärmning
+        </button>
       </div>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Möblering</h2>
@@ -164,7 +183,9 @@ const Residence = ({ data, isPreview, setStep }) => {
             </p>
           </div>
         </div>
-        <button onClick={() => setStep(6)}>Ändra möblering</button>
+        <button onClick={() => setStep(6)} className={styles.button}>
+          Ändra möblering
+        </button>
       </div>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Ingår i hyran</h2>
@@ -202,7 +223,85 @@ const Residence = ({ data, isPreview, setStep }) => {
             )}
           </div>
         </div>
-        <button onClick={() => setStep(11)}>Ändra vad som ingår</button>
+        <button onClick={() => setStep(11)} className={styles.button}>
+          Ändra vad som ingår
+        </button>
+      </div>
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Bekvämligheter</h2>
+        <div className={styles.sectionBlock}>
+          <div className={styles.amenities}>
+            {data.balcony && (
+              <div>
+                <img src={benchIcon.src} width="40px" height="40px" />
+                Balkong/uteplats
+              </div>
+            )}
+            {data.elevator && (
+              <div>
+                <MdOutlineElevator size="40px" color="#23449B" />
+                Hiss
+              </div>
+            )}
+            {data.air && (
+              <div>
+                <img src={acIcon.src} width="40px" height="40px" />
+                Luftkonditionering
+              </div>
+            )}
+            {data.dishWasher && (
+              <div>
+                <img src={dishwasherIcon.src} width="40px" height="40px" />
+                Diskmaskin
+              </div>
+            )}
+            {data.washingMachine && (
+              <div>
+                <img src={washingMachineIcon.src} width="40px" height="40px" />
+                Tvättmaskin
+              </div>
+            )}
+            {data.dryer && (
+              <div>
+                <img src={dryerIcon.src} width="40px" height="40px" />
+                Torktumlare
+              </div>
+            )}
+            {data.bathTub && (
+              <div>
+                <img src={bathtubIcon.src} width="40px" height="40px" />
+                Badkar
+              </div>
+            )}
+            {data.garage && (
+              <div>
+                <img src={garageIcon.src} width="40px" height="40px" />
+                Garage
+              </div>
+            )}
+            {data.parking && (
+              <div>
+                <img src={parkingIcon.src} width="40px" height="40px" />
+                Parkering
+              </div>
+            )}
+            {data.furnace && (
+              <div>
+                <img src={furnaceIcon.src} width="40px" height="40px" />
+                Kakelugn/Öppen spis
+              </div>
+            )}
+            {data.internet && (
+              <div>
+                <IoWifi color="#23449B" size="40px" />
+                Internet
+              </div>
+            )}
+          </div>
+        </div>
+        <button onClick={() => setStep(9)} className={styles.button}>
+          Ändra bekvämligheter
+        </button>
       </div>
     </div>
   );

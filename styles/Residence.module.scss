@@ -1,0 +1,38 @@
+@import "./variables/variables.scss";
+
+.button {
+  background-color: $primaryBlue;
+  color: $secondaryWhite;
+  padding: 12.5px 0;
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+.addressStreet {
+  font-size: 36px;
+  font-weight: bold;
+  color: $primaryBlue;
+  margin-bottom: 8px;
+}
+
+.addressPost {
+  font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+
+.imageContainer img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.section {
+  padding: 16px;
+  background: white;
+  border-radius: 5px;
+}
