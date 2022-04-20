@@ -47,7 +47,6 @@ const Residence = ({ data, isPreview, setStep }) => {
         <button onClick={() => setStep(10)}>Ändra bilder & beskrivning</button>
       )}
       <div className={styles.section}>
-        <h2 className={styles.sectionTitle}>Hyra</h2>
         <div className={styles.sectionBlock}>
           {data.rent === "whole" && (
             <>
@@ -67,6 +66,17 @@ const Residence = ({ data, isPreview, setStep }) => {
           {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}"
         </button>
       </div>
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Hyra</h2>
+        <div className={styles.sectionBlock}>
+          <p className={styles.rent}>
+            {formatRent(data.monthlyRent)}
+            kr
+          </p>
+          <p className={styles.rentSubtitle}>Månadshyra</p>
+        </div>
+        <button onClick={() => setStep(11)}>Ändra Hyra</button>
+      </div>
     </div>
   );
 };
@@ -78,6 +88,10 @@ Residence.defaultProps = {
 };
 
 const formatAddress = (address) => {
+  if (address.length < 1) {
+    return ["", ""];
+  }
+
   const REGEX = /\d{3}[ ]?\d{2}/gm;
   const splitIndex = REGEX.exec(address).index;
 
@@ -85,6 +99,12 @@ const formatAddress = (address) => {
     address.slice(0, splitIndex).replace(", ", ""),
     address.slice(splitIndex).replace(", ", "") + ", Sverige",
   ];
+};
+
+const formatRent = (rent) => {
+  return Intl.NumberFormat({ style: "currency", currency: "SEK" })
+    .format(rent)
+    .replace(",", " ");
 };
 
 export default Residence;
