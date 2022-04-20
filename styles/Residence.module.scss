@@ -182,3 +182,25 @@
     }
   }
 }
+
+.amenitiesSection {
+  > div {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    > div {
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      svg,
+      img {
+        margin-right: 8px;
+      }
+    }
+  }
+}

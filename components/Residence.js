@@ -238,12 +238,12 @@ const Residence = ({ data, isPreview, setStep }) => {
       </button>
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Bekvämligheter</h2>
-        <div className={styles.sectionBlock}>
+        <div className={`${styles.sectionBlock} ${styles.amenitiesSection}`}>
           <div className={styles.amenities}>
             {data.balcony && (
               <div>
                 <img src={benchIcon.src} width="40px" height="40px" />
-                Balkong/uteplats
+                Uteplats
               </div>
             )}
             {data.elevator && (
@@ -255,7 +255,7 @@ const Residence = ({ data, isPreview, setStep }) => {
             {data.air && (
               <div>
                 <img src={acIcon.src} width="40px" height="40px" />
-                Luftkonditionering
+                AC
               </div>
             )}
             {data.dishWasher && (
@@ -297,7 +297,7 @@ const Residence = ({ data, isPreview, setStep }) => {
             {data.furnace && (
               <div>
                 <img src={furnaceIcon.src} width="40px" height="40px" />
-                Kakelugn/Öppen spis
+                Eldstad
               </div>
             )}
             {data.internet && (
