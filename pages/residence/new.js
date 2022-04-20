@@ -54,6 +54,9 @@ export default function Home({ user }) {
     water: false,
     women: false,
   });
+
+  const [images, setImages] = useState([]);
+
   const [showUploadError, setShowUploadError] = useState(false);
   const router = useRouter();
 
@@ -90,14 +93,53 @@ export default function Home({ user }) {
           return;
         }
 
+        console.log(r);
+
+        images.forEach(async (image) => {
+          const filename = `${randomFilename()}.${image.type.replace(
+            "image/",
+            ""
+          )}`;
+          const path = `${user.id}/${r.data[0].id}/${filename}`;
+          const imageUpload = await supabase.storage
+            .from("residence")
+            .upload(path, image);
+
+          const saveImageMeta = await supabase.from("images").insert({
+            user_id: user.id,
+            residence_id: r.data[0].id,
+            image: path,
+          });
+
+          if (imageUpload.error || saveImageMeta.error) {
+            setShowUploadError(true);
+            console.log(imageUpload);
+            return;
+          }
+        });
+
         router.push(`/residence/${hashids.encode(r.data[0].id)}`);
       } catch (e) {
         setShowUploadError(true);
+        console.log(e);
         return;
       }
     } else {
       router.push("/login");
     }
+  };
+
+  const randomFilename = () => {
+    let chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    // Pick characers randomly
+    let str = "";
+    for (let i = 0; i < 20; i++) {
+      str += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    return str;
   };
 
   return (
@@ -115,6 +157,8 @@ export default function Home({ user }) {
           setState={setState}
           manualChange={manualChange}
           setStep={setStep}
+          images={images}
+          setImages={setImages}
         />
       </div>
       <FormControls

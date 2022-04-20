@@ -4,6 +4,7 @@
   border-radius: 5px;
   width: 100px;
   height: 100px;
+  object-fit: cover;
 }
 
 .pictureContainer {
@@ -31,6 +32,19 @@
   background-color: $secondaryWhite;
   border-radius: 5px;
   cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 }
 
 .videoContainer {

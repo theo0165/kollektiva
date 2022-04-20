@@ -7,34 +7,21 @@ import bathroom from "../../assets/bathroom.jpeg";
 import blank from "../../assets/blank.png";
 
 import styles from "../../styles/formComponents/PictureSelection.module.scss";
+import ImageUpload from "../ImageUpload";
 
-export default function PictureSelection({ state, handleChange }) {
+export default function PictureSelection({
+  state,
+  handleChange,
+  images,
+  setImages,
+}) {
   return (
     <div className="col-10">
       <h1 className="form-title">Hur ser bostaden ut?</h1>
       <p className={`${styles.subtitle} form-subtitle`}>
         Ladda upp några bilder och/eller videoklipp av bostaden.
       </p>
-      <div className={styles.pushDown}>
-        <label className="form-label" htmlFor="picture-container">
-          Ladda upp bilder
-        </label>
-        <div className={styles.pictureContainer}>
-          <img className={styles.formImg} src={house.src} />
-          <img className={styles.formImg} src={kitchen.src} />
-          <img className={styles.formImg} src={livingroom.src} />
-          <img className={styles.formImg} src={bathroom.src} />
-          <div className={styles.blank}>+</div>
-        </div>
-      </div>
-      <div>
-        <label className="form-label" htmlFor="video-container">
-          Ladda upp videoklipp
-        </label>
-        <div className={styles.videoContainer}>
-          <div className={styles.blank}>+</div>
-        </div>
-      </div>
+      <ImageUpload images={images} setImages={setImages} />
       <div>
         <label className="form-label" htmlFor="house-description">
           Beskriv bostaden

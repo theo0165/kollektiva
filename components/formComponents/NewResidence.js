@@ -25,6 +25,8 @@ export default function NewResidence({
   state,
   setState,
   manualChange,
+  images,
+  setImages,
 }) {
   switch (step) {
     case 1:
@@ -70,7 +72,14 @@ export default function NewResidence({
         />
       );
     case 10:
-      return <PictureSelection state={state} handleChange={handleChange} />;
+      return (
+        <PictureSelection
+          state={state}
+          handleChange={handleChange}
+          images={images}
+          setImages={setImages}
+        />
+      );
     case 11:
       return (
         <PrizeSelection
