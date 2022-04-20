@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import NewResidence from "../components/formComponents/NewResidence";
-import FormControls from "../components/FormControls";
-import styles from "../styles/Home.module.scss";
+import NewResidence from "../../components/formComponents/NewResidence";
+import FormControls from "../../components/FormControls";
+import styles from "../../styles/Home.module.scss";
 import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import { supabase } from "../utils/initSupabase";
-import Flash from "../components/Flash";
+import Header from "../../components/Header";
+import { supabase } from "../../utils/initSupabase";
+import Flash from "../../components/Flash";
 import { useRouter } from "next/router";
-import hashids from "../utils/hashids";
+import hashids from "../../utils/hashids";
 
 export default function Home({ user }) {
   const maxSteps = 14;
