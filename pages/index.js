@@ -1,157 +1,60 @@
-import Head from "next/head";
-import Image from "next/image";
-import NewResidence from "../components/formComponents/NewResidence";
-import FormControls from "../components/FormControls";
-import styles from "../styles/Home.module.scss";
-import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import { supabase } from "../utils/initSupabase";
-import Flash from "../components/Flash";
-import { useRouter } from "next/router";
-import hashids from "../utils/hashids";
+import heroimagemobile from "../assets/heroimagemobile.png";
+import couple from "../assets/couple.png";
 
-export default function Home({ user }) {
-  const maxSteps = 14;
-  const [step, setStep] = useState(1);
-  const [state, setState] = useState({
-    address: "",
-    air: false,
-    balcony: false,
-    bathTub: false,
-    biarea: 0,
-    broadband: false,
-    description: "",
-    dishWasher: false,
-    dryer: false,
-    electricity: false,
-    elevator: false,
-    furnace: false,
-    furniture: "",
-    garage: false,
-    garbage: false,
-    garden: null,
-    gardenEquipment: null,
-    heat: "",
-    heating: false,
-    income: 0,
-    internet: false,
-    men: false,
-    monthlyRent: 0,
-    nonBinary: false,
-    parking: false,
-    people: 0,
-    pets: null,
-    plot: 0,
-    rent: "",
-    rentByAll: false,
-    rooms: 0,
-    size: 0,
-    smoking: null,
-    timeEnd: "",
-    timeStart: "",
-    type: "",
-    washingMachine: false,
-    water: false,
-    women: false,
-  });
-  const [showUploadError, setShowUploadError] = useState(false);
-  const router = useRouter();
-
-  // handle field change
-  const handleChange = (input) => (e) => {
-    setState({ ...state, [input]: e.target.value });
-  };
-
-  const manualChange = (name, value) => {
-    setState({ ...state, [name]: value });
-  };
-
-  // go back to previous step
-  const prevStep = () => {
-    setStep(step - 1);
-  };
-
-  // proceed to the next step
-  const nextStep = () => {
-    setStep(step + 1);
-  };
-
-  const publish = async () => {
-    if (user && user.role === "authenticated") {
-      setShowUploadError(false);
-      try {
-        const r = await supabase
-          .from("residence")
-          .insert({ ...state, user_id: user.id });
-
-        if (r.error) {
-          setShowUploadError(true);
-          console.log(r);
-          return;
-        }
-
-        router.push(`/residence/${hashids.encode(r.data[0].id)}`);
-      } catch (e) {
-        setShowUploadError(true);
-        return;
-      }
-    } else {
-      router.push("/login");
-    }
-  };
-
+export default function Index({}) {
   return (
-    <div className={styles.container}>
-      {showUploadError && (
-        <Flash type="error" message="Något gick fel, försök igen senare" />
-      )}
-      <div style={{ marginBottom: "200px" }}>
-        <NewResidence
-          step={step}
-          nextStep={nextStep}
-          prevStep={prevStep}
-          setStep={setStep}
-          handleChange={handleChange}
-          state={state}
-          setState={setState}
-          manualChange={manualChange}
-        />
+    <div>
+      <div className="hero">
+        <img src={heroimagemobile.src}></img>
+        <p>
+          Med Kollektiva är det tryggt och enkelt att hyra ut — delar av eller
+          hela din bostad
+        </p>
+        <button className="btn btn-primary">Skapa annons</button>
       </div>
-      <FormControls
-        maxSteps={maxSteps}
-        step={step}
-        nextStep={nextStep}
-        prevStep={prevStep}
-        publish={publish}
-      />
+      <div className="reason-container col-10">
+        <h3 className="title">Varför Kollektiva?</h3>
+        <div className="reason">
+          <h5>1. På dina villkor</h5>
+          <p className="reason-text">
+            Kollektiva ger dig friheten att göra det du vill utan att behöva
+            släppa tryggheten.
+          </p>
+        </div>
+        <div className="reason">
+          <h5>2. Tryggt</h5>
+          <p className="reason-text">
+            Kollektiva erbjuder säker uthyrning, alla som hyr och hyr ut behöver
+            bekräfta sin identitet.
+          </p>
+        </div>
+        <div className="reason">
+          <h5>3. Lätt att använda</h5>
+          <p className="reason-text last">
+            Kollektiva erbjuder det smidigaste och enklaste sättet att hyra ut.
+          </p>
+        </div>
+      </div>
+      <div className="quote-container">
+        <p className="quote">
+          “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+          sint. Velit officia consequat duis enim velit mollit. Exercitation
+          veniam consequat sunt nostrud amet.”
+        </p>
+      </div>
+      <div className="latest-ads col-10">
+        <h4>Senaste annonserna</h4>
+        <div className="carousel"></div>
+        <button className="btn btn-primary">Se fler annonser</button>
+      </div>
+      <div className="col-10 testimonial">
+        <img className="couple-image" src={couple.src}></img>
+        <h5>Eva & Gösta Persson</h5>
+        <p className="testimonial-text">
+          Vi valde att hyra ut via Kollektiva eftersom det är ett enkelt och
+          tryggt alternativ. Vi är väldigt nöjda så här långt!
+        </p>
+      </div>
     </div>
   );
-}
-
-Home.getLayout = function getLayout(page) {
-  return (
-    <>
-      <Header shouldExit={true} />
-      {page}
-    </>
-  );
-};
-
-export async function getServerSideProps({ req }) {
-  const { data, user, error } = await supabase.auth.api.getUserByCookie(req);
-
-  if (!user) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      user: user,
-    },
-  };
 }
