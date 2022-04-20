@@ -133,7 +133,15 @@ export default function Login() {
             <FaFacebook color="#23449b" size="25px" />
             Facebook
           </button>
-          <button className={styles.loginMethodBtn + " btn"}>
+          <button
+            className={styles.loginMethodBtn + " btn"}
+            onClick={() =>
+              supabase.auth.signIn(
+                { provider: "google" },
+                { redirectTo: "/login" }
+              )
+            }
+          >
             <FcGoogle size="25px" />
             Google
           </button>

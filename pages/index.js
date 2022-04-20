@@ -1,5 +1,6 @@
 import heroimagemobile from "../assets/heroimagemobile.png";
 import couple from "../assets/couple.png";
+import { supabase } from "../utils/initSupabase";
 
 export default function Index({}) {
   return (
