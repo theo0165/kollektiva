@@ -1,22 +1,61 @@
 import Head from "next/head";
 import Image from "next/image";
-import NewResidence from "../../components/formComponents/NewResidence";
-import FormControls from "../../components/FormControls";
+import NewResidence from "../components/formComponents/NewResidence";
+import FormControls from "../components/FormControls";
 import styles from "../styles/Home.module.scss";
 import { useState, useEffect } from "react";
-import Header from "../../components/Header";
-import { supabase } from "../../utils/initSupabase";
-import Flash from "../../components/Flash";
+import Header from "../components/Header";
+import { supabase } from "../utils/initSupabase";
+import Flash from "../components/Flash";
 import { useRouter } from "next/router";
-import Hashids from "hashids";
+import hashids from "../utils/hashids";
 
 export default function Home({ user }) {
   const maxSteps = 14;
   const [step, setStep] = useState(1);
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    address: "",
+    air: false,
+    balcony: false,
+    bathTub: false,
+    biarea: 0,
+    broadband: false,
+    description: "",
+    dishWasher: false,
+    dryer: false,
+    electricity: false,
+    elevator: false,
+    furnace: false,
+    furniture: "",
+    garage: false,
+    garbage: false,
+    garden: null,
+    gardenEquipment: null,
+    heat: "",
+    heating: false,
+    income: 0,
+    internet: false,
+    men: false,
+    monthlyRent: 0,
+    nonBinary: false,
+    parking: false,
+    people: 0,
+    pets: null,
+    plot: 0,
+    rent: "",
+    rentByAll: false,
+    rooms: 0,
+    size: 0,
+    smoking: null,
+    timeEnd: "",
+    timeStart: "",
+    type: "",
+    washingMachine: false,
+    water: false,
+    women: false,
+  });
   const [showUploadError, setShowUploadError] = useState(false);
   const router = useRouter();
-  const hashids = new Hashids("kollektiva-residence-id", 10);
 
   // handle field change
   const handleChange = (input) => (e) => {
@@ -47,6 +86,7 @@ export default function Home({ user }) {
 
         if (r.error) {
           setShowUploadError(true);
+          console.log(r);
           return;
         }
 
