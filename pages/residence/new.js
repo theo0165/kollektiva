@@ -114,6 +114,7 @@ export default function Home({ user }) {
           state={state}
           setState={setState}
           manualChange={manualChange}
+          setStep={setStep}
         />
       </div>
       <FormControls
