@@ -89,7 +89,9 @@ export default function PrizeSelection({ state, handleChange, manualChange }) {
           onChange={(e) =>
             manualChange("monthlyRent", parseInt(e.target.value))
           }
-          defaultValue={state.monthlyRent}
+          defaultValue={
+            state.monthlyRent != 0 ? state.monthlyRent.toString() : ""
+          }
           required={true}
         />
       </div>
