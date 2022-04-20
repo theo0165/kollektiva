@@ -62,8 +62,8 @@ const Residence = ({ data, isPreview, setStep }) => {
           )}
         </div>
         <button onClick={() => setStep(1)}>
-          Ändra till "
-          {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}"
+          Ändra till &quot;
+          {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}&quot;
         </button>
       </div>
       <div className={styles.section}>
