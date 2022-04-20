@@ -47,7 +47,7 @@ const Residence = ({ data, isPreview, setStep }) => {
           </p>
         </div>
       )}
-      <div>
+      <div className={styles.address}>
         <h2 className={styles.addressStreet}>{addressArray[0]}</h2>
         <p className={styles.addressPost}>{addressArray[1]}</p>
         {isPreview && (
@@ -94,10 +94,12 @@ const Residence = ({ data, isPreview, setStep }) => {
           )}
         </div>
       </div>
-      <button onClick={() => setStep(1)} className={styles.button}>
-        Ändra till &quot;
-        {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}&quot;
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(1)} className={styles.button}>
+          Ändra till &quot;
+          {data.rent === "whole" ? "Del av bostaden" : "Hela bostaden"}&quot;
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Hyra</h2>
         <div
@@ -113,9 +115,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           <p className={styles.sectionSubtitle}>Månadshyra</p>
         </div>
       </div>
-      <button onClick={() => setStep(11)} className={styles.button}>
-        Ändra Hyra
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(11)} className={styles.button}>
+          Ändra Hyra
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Storlek</h2>
         <div className={`${styles.sectionBlock} ${styles.sizeSection}`}>
@@ -149,9 +153,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => setStep(3)} className={styles.button}>
-        Ändra storlek
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(3)} className={styles.button}>
+          Ändra storlek
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Uthyrningsdatum</h2>
         <div className={`${styles.halfSplit} ${styles.timeSection}`}>
@@ -165,9 +171,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => setStep(5)} className={styles.button}>
-        Ändra uthyrningsdatum
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(5)} className={styles.button}>
+          Ändra uthyrningsdatum
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Uppvärmning</h2>
         <div className={styles.sectionBlock}>
@@ -177,9 +185,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           </p>
         </div>
       </div>
-      <button onClick={() => setStep(8)} className={styles.button}>
-        Ändra uppvärmning
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(8)} className={styles.button}>
+          Ändra uppvärmning
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Möblering</h2>
         <div className={`${styles.sectionBlock} ${styles.furnitureSection}`}>
@@ -193,9 +203,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => setStep(6)} className={styles.button}>
-        Ändra möblering
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(6)} className={styles.button}>
+          Ändra möblering
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Ingår i hyran</h2>
         <div className={`${styles.sectionBlock} ${styles.includedSection}`}>
@@ -233,9 +245,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => setStep(11)} className={styles.button}>
-        Ändra vad som ingår
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(11)} className={styles.button}>
+          Ändra vad som ingår
+        </button>
+      )}
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Bekvämligheter</h2>
         <div className={`${styles.sectionBlock} ${styles.amenitiesSection}`}>
@@ -309,9 +323,11 @@ const Residence = ({ data, isPreview, setStep }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => setStep(9)} className={styles.button}>
-        Ändra bekvämligheter
-      </button>
+      {isPreview && (
+        <button onClick={() => setStep(9)} className={styles.button}>
+          Ändra bekvämligheter
+        </button>
+      )}
     </div>
   );
 };

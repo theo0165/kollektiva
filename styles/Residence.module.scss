@@ -74,6 +74,10 @@
   justify-content: end;
 }
 
+.address {
+  margin-bottom: 48px;
+}
+
 .addressStreet {
   font-size: 36px;
   font-weight: bold;
@@ -84,12 +88,15 @@
 .addressPost {
   font-size: 20px;
   margin-top: 8px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-.imageContainer img {
-  width: 100%;
-  object-fit: cover;
+.imageContainer {
+  margin-bottom: 48px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .description {
