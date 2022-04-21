@@ -12,3 +12,68 @@
     cursor: pointer;
   }
 }
+
+.logo {
+  display: block;
+}
+
+.mobile {
+  display: inline-block;
+
+  @media screen and (min-width: 1023px) {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0 13px;
+
+      a {
+        font-size: 24px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &.menuButton {
+        button {
+          background-color: $primaryBlue;
+          color: white;
+          font-size: 24px;
+          font-weight: 600;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          padding: 12.5px 32px;
+        }
+      }
+
+      &.menuUser {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: inline-block;
+  }
+}
