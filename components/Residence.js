@@ -38,8 +38,6 @@ const Residence = ({ data, images, isPreview, setStep }) => {
     }
   };
 
-  const handleDragStart = (e) => e.preventDefault();
-
   return (
     <div className="col-10">
       {isPreview && (
@@ -70,10 +68,13 @@ const Residence = ({ data, images, isPreview, setStep }) => {
               autoPlayInterval={3000}
               items={images.map((image, index) => (
                 <img
-                  src={URL.createObjectURL(image)}
+                  src={
+                    typeof image === "string"
+                      ? image
+                      : URL.createObjectURL(image)
+                  }
                   key={`image-${index}`}
                   className={styles.image}
-                  handleDragStart={handleDragStart}
                 />
               ))}
             />
