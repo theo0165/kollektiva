@@ -15,11 +15,8 @@ import { BsFillStarFill } from "react-icons/bs";
 export default function Index({ latestAds }) {
   const [user, setUser] = useState(supabase.auth.user() || null);
 
-  console.log(latestAds);
-
   useEffect(() => {
     supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log("auth state changed");
       let newUser = supabase.auth.user();
       if (newUser) {
         await fetch("/api/auth/set", {

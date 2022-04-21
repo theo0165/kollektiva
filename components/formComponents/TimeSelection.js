@@ -69,8 +69,6 @@ const calculateDate = (d1, d2) => {
 
   let message = "";
 
-  console.log(dayDiff);
-
   if (dayDiff <= 0) {
     return "0 dagar";
   }

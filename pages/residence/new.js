@@ -110,7 +110,6 @@ export default function Home({ user }) {
 
           if (imageUpload.error || saveImageMeta.error) {
             setShowUploadError(true);
-            console.log(imageUpload);
             return;
           }
         });
@@ -118,7 +117,6 @@ export default function Home({ user }) {
         router.push(`/residence/${hashids.encode(r.data[0].id)}`);
       } catch (e) {
         setShowUploadError(true);
-        console.log(e);
         return;
       }
     } else {

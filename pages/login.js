@@ -19,7 +19,6 @@ export default function Login() {
 
   useEffect(() => {
     supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log("auth state changed");
       let newUser = supabase.auth.user();
       if (newUser) {
         await fetch("/api/auth/set", {
@@ -32,8 +31,6 @@ export default function Login() {
 
       setUser(supabase.auth.user() || null);
     });
-
-    console.log(user);
 
     if (user) {
       router.push("/");

@@ -7,7 +7,5 @@ export default async function handler(req, res) {
     "sb-refresh-token=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT",
   ]);
 
-  console.log(res);
-
   res.send({});
 }

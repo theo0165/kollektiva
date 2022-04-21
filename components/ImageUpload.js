@@ -3,8 +3,6 @@ import styles from "../styles/formComponents/PictureSelection.module.scss";
 const ImageUpload = ({ images, setImages }) => {
   const handleImageSelect = (e) => {
     setImages([...images, ...e.target.files]);
-
-    console.log(...e.target.files);
   };
 
   return (
