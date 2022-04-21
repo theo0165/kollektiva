@@ -1,6 +1,7 @@
 import "../styles/globals.scss";
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const getLayout =
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
       <>
         <Header />
         {page}
+        <Footer />
       </>
     ));
 

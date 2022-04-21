@@ -1,0 +1,63 @@
+@import "./variables/variables.scss";
+
+.container {
+  background: $primaryBlue;
+  padding: 50px 0 50px 100px;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    grid-template-columns: 1fr;
+
+    > div {
+      margin-bottom: 32px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      color: white;
+      margin-bottom: 24px;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+
+  .socialContainer {
+    p {
+      margin: 0 0 24px 0;
+    }
+
+    .social {
+      svg {
+        margin-right: 18px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+}
