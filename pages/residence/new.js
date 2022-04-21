@@ -181,16 +181,14 @@ Home.getLayout = function getLayout(page) {
 export async function getServerSideProps({ req }) {
   const { data, user, error } = await supabase.auth.api.getUserByCookie(req);
 
-  console.log("user", user);
-
-  // if (!user) {
-  //   return {
-  //     redirect: {
-  //       destination: "/login",
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+  if (!user) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {
