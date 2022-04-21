@@ -9,6 +9,7 @@ import couple from "../assets/couple.png";
 import { supabase } from "../utils/initSupabase";
 import { useState, useEffect } from "react";
 import LatestsAds from "../components/LatestAds";
+import { BsFillStarFill } from "react-icons/bs";
 
 export default function Index({ latestAds }) {
   const [user, setUser] = useState(supabase.auth.user() || null);
@@ -91,21 +92,42 @@ export default function Index({ latestAds }) {
         <button className="btn btn-primary">Se fler annonser</button>
       </div>
       <div className="testemonials">
-        <div className="col-10 testimonial">
-          <img className="couple-image" src={couple.src}></img>
-          <h5>Eva & Gösta Persson</h5>
-          <p className="testimonial-text">
-            “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt &
-            tryggt alternativ”. Vi är mycket nöjda”.
-          </p>
-        </div>
-        <div className="col-10 testimonial">
-          <img className="couple-image" src={couple.src}></img>
-          <h5>Eva & Gösta Persson</h5>
-          <p className="testimonial-text">
-            “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt &
-            tryggt alternativ”. Vi är mycket nöjda”.
-          </p>
+        <h4>Läs om våra kära kunder:</h4>
+        <div className="testemonial-container">
+          <div className="testimonial">
+            <img className="couple-image" src={couple.src}></img>
+            <div className="testimonial-meta">
+              <p className="testimonial-text">
+                “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt
+                & tryggt alternativ”. Vi är mycket nöjda”.
+              </p>
+              <h5>Eva & Gösta Persson</h5>
+              <div className="stars">
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+              </div>
+            </div>
+          </div>
+          <div className="testimonial">
+            <img className="couple-image" src={couple.src}></img>
+            <div className="testimonial-meta">
+              <p className="testimonial-text">
+                “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt
+                & tryggt alternativ”. Vi är mycket nöjda”.
+              </p>
+              <h5>Eva & Gösta Persson</h5>
+              <div className="stars">
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+                <BsFillStarFill size="14px" color="#23449B" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -119,12 +141,20 @@ export const getServerSideProps = async ({ req, res }) => {
     .order("created_at")
     .limit(5);
 
+  if (data.r) {
+    console.log(data.r);
+  }
+
   const ads = data.body.map(async (residence) => {
     const image = await supabase
       .from("images")
       .select("image")
       .eq("residence_id", residence.id)
       .limit(1);
+
+    if (image.r) {
+      console.log(image.r);
+    }
 
     return {
       ...residence,
