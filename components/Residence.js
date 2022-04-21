@@ -108,7 +108,7 @@ const Residence = ({ data, images, isPreview, setStep }) => {
           {data.rent === "part" && (
             <>
               <img src={HalfHouse.src} width="40px" height="40px" />
-              <p>Del av bostaden</p>
+              <p> Del av bostaden</p>
             </>
           )}
         </div>
