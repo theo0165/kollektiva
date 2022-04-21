@@ -89,11 +89,8 @@ export default function Home({ user }) {
 
         if (r.error) {
           setShowUploadError(true);
-          console.log(r);
           return;
         }
-
-        console.log(r);
 
         images.forEach(async (image) => {
           const filename = `${randomFilename()}.${image.type.replace(
