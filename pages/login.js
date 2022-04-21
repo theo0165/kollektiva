@@ -5,6 +5,8 @@ import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useRouter } from "next/router";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Login() {
   const router = useRouter();
@@ -157,3 +159,13 @@ export default function Login() {
     </div>
   );
 }
+
+Login.getLayout = function getLayout(page) {
+  return (
+    <>
+      <Header />
+      {page}
+      <Footer pushBottom={true} />
+    </>
+  );
+};

@@ -3,10 +3,16 @@
 .container {
   background: $primaryBlue;
   padding: 50px 0 50px 100px;
+
+  @media screen and (max-width: 380px) {
+    padding: 50px 0 50px 24px;
+  }
 }
 
 .logo {
   margin-bottom: 50px;
+  max-width: 100%;
+  margin-right: 24px;
 }
 
 .content {

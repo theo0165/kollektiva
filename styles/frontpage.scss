@@ -4,8 +4,11 @@
   display: none;
   width: 100%;
   height: 100%;
+  max-height: calc(100vh - 80px);
+  object-fit: cover;
+  object-position: center;
 
-  @media screen and (min-width: 390px) {
+  @media screen and (min-width: 391px) {
     display: block;
   }
 }
@@ -14,6 +17,9 @@
   display: none;
   width: 100%;
   height: 100%;
+  max-height: calc(100vh - 80px);
+  object-fit: cover;
+  object-position: center;
 
   @media screen and (max-width: 390px) {
     display: block;
@@ -28,6 +34,14 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 28px;
+    }
   }
 
   .hero-title {
@@ -38,12 +52,33 @@
     font-size: 36px;
     font-weight: bold;
     margin: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 52px;
+    }
   }
 
   .hero-text-container {
     position: absolute;
     bottom: calc(48px + 18px);
     left: 24px;
+    max-width: 280px;
+
+    @media screen and (min-width: 758px) {
+      left: unset;
+      right: 24px;
+      max-width: 400px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      left: unset;
+      right: 24px;
+      max-width: 550px;
+    }
   }
 
   button {
@@ -61,6 +96,14 @@
   font-weight: bold;
   font-style: italic;
   font-size: large;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 36px;
+  }
 }
 .quote-container {
   text-align: center;
@@ -92,6 +135,10 @@ h5 {
   flex-direction: column;
 }
 
+.reason {
+  width: 350px;
+}
+
 .check {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -117,11 +164,14 @@ h5 {
 
 @media screen and (min-width: 1024px) {
   .reason-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 70px;
-    align-items: start;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 80px;
   }
 }
 
@@ -219,6 +269,8 @@ h5 {
 
 .latest-ads {
   text-align: center;
+  max-width: 1200px;
+  margin: 0 48px;
   h4 {
     margin: 14px 0 32px 0;
   }

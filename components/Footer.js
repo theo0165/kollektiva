@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { BsLinkedin, BsInstagram, BsFacebook } from "react-icons/bs";
 
-const Footer = () => {
+const Footer = ({ pushBottom }) => {
   return (
     <footer className={styles.container}>
       <div className={styles.logo}>
@@ -40,8 +40,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {pushBottom && <div style={{ marginBottom: "200px" }}></div>}
     </footer>
   );
+};
+
+Footer.defaultProps = {
+  pushBottom: false,
 };
 
 export default Footer;

@@ -53,7 +53,7 @@ export default function Index({ latestAds }) {
       <div className="content">
         <h3 className="title col-10">Varför ska du välja Kollektiva?</h3>
 
-        <div className="reason-container col-10">
+        <div className="reason-container">
           <div className="reason">
             <img className="check" src={terms_check.src}></img>
             <h5>1. På dina villkor</h5>
@@ -87,7 +87,7 @@ export default function Index({ latestAds }) {
           <img className="qoute-logo" src={logotype.src}></img>
         </div>
       </div>
-      <div className="latest-ads col-10">
+      <div className="latest-ads">
         <h4>Senaste annonserna</h4>
         <LatestsAds data={latestAds} />
         <button className="btn btn-primary">Se fler annonser</button>
@@ -139,7 +139,7 @@ export const getServerSideProps = async ({ req, res }) => {
   const data = await supabase
     .from("residence")
     .select()
-    .order("created_at")
+    .order("created_at", true)
     .limit(5);
 
   if (data.r) {
