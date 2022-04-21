@@ -21,6 +21,7 @@ import garageIcon from "../assets/icons/garage.svg";
 import parkingIcon from "../assets/icons/parking.svg";
 import furnaceIcon from "../assets/icons/furnace.svg";
 import AliceCarousel from "react-alice-carousel";
+import { formatAddress, formatRent } from "../utils/helpers";
 
 const Residence = ({ data, images, isPreview, setStep }) => {
   const addressArray = formatAddress(data.address);
@@ -354,26 +355,6 @@ Residence.defaultProps = {
   data: {},
   isPreview: false,
   setStep: () => {},
-};
-
-const formatAddress = (address) => {
-  if (address.length < 1) {
-    return ["", ""];
-  }
-
-  const REGEX = /\d{3}[ ]?\d{2}/gm;
-  const splitIndex = REGEX.exec(address).index;
-
-  return [
-    address.slice(0, splitIndex).replace(", ", ""),
-    address.slice(splitIndex).replace(", ", "") + ", Sverige",
-  ];
-};
-
-const formatRent = (rent) => {
-  return Intl.NumberFormat({ style: "currency", currency: "SEK" })
-    .format(rent)
-    .replace(",", " ");
 };
 
 export default Residence;

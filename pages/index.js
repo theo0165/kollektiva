@@ -8,9 +8,12 @@ import logotype from "../assets/icons/logotype.svg";
 import couple from "../assets/couple.png";
 import { supabase } from "../utils/initSupabase";
 import { useState, useEffect } from "react";
+import LatestsAds from "../components/LatestAds";
 
-export default function Index({}) {
+export default function Index({ latestAds }) {
   const [user, setUser] = useState(supabase.auth.user() || null);
+
+  console.log(latestAds);
 
   useEffect(() => {
     supabase.auth.onAuthStateChange(async (event, session) => {
@@ -81,10 +84,20 @@ export default function Index({}) {
           </p>
           <img className="qoute-logo" src={logotype.src}></img>
         </div>
-        <div className="latest-ads col-10">
-          <h4>Senaste annonserna</h4>
-          <div className="carousel"></div>
-          <button className="btn btn-primary">Se fler annonser</button>
+      </div>
+      <div className="latest-ads col-10">
+        <h4>Senaste annonserna</h4>
+        <LatestsAds data={latestAds} />
+        <button className="btn btn-primary">Se fler annonser</button>
+      </div>
+      <div className="testemonials">
+        <div className="col-10 testimonial">
+          <img className="couple-image" src={couple.src}></img>
+          <h5>Eva & Gösta Persson</h5>
+          <p className="testimonial-text">
+            “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt &
+            tryggt alternativ”. Vi är mycket nöjda”.
+          </p>
         </div>
         <div className="col-10 testimonial">
           <img className="couple-image" src={couple.src}></img>
@@ -98,3 +111,30 @@ export default function Index({}) {
     </div>
   );
 }
+
+export const getServerSideProps = async ({ req, res }) => {
+  const data = await supabase
+    .from("residence")
+    .select()
+    .order("created_at")
+    .limit(5);
+
+  const ads = data.body.map(async (residence) => {
+    const image = await supabase
+      .from("images")
+      .select("image")
+      .eq("residence_id", residence.id)
+      .limit(1);
+
+    return {
+      ...residence,
+      image: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/residence/${image.body[0].image}`,
+    };
+  });
+
+  return {
+    props: {
+      latestAds: await Promise.all(ads),
+    },
+  };
+};
