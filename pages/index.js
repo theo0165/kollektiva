@@ -6,6 +6,7 @@ import terms_check from "../assets/icons/terms_check.svg";
 import logotype from "../assets/icons/logotype.svg";
 
 import couple from "../assets/couple.png";
+import coupleTwo from "../assets/coupletwo.png";
 import { supabase } from "../utils/initSupabase";
 import { useState, useEffect } from "react";
 import LatestsAds from "../components/LatestAds";
@@ -95,13 +96,13 @@ export default function Index({ latestAds }) {
         <h4>Läs om våra kära kunder:</h4>
         <div className="testemonial-container">
           <div className="testimonial">
-            <img className="couple-image" src={couple.src}></img>
+            <img className="couple-image" src={coupleTwo.src}></img>
             <div className="testimonial-meta">
               <p className="testimonial-text">
-                “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt
-                & tryggt alternativ”. Vi är mycket nöjda”.
+                Vi valde att hyra ut via Kollektiva eftersom det är ett enkelt
+                och tryggt alternativ. Vi är väldigt nöjda så här långt!
               </p>
-              <h5>Eva & Gösta Persson</h5>
+              <h5>- Eva & Gösta Persson</h5>
               <div className="stars">
                 <BsFillStarFill size="14px" color="#23449B" />
                 <BsFillStarFill size="14px" color="#23449B" />
@@ -115,10 +116,10 @@ export default function Index({ latestAds }) {
             <img className="couple-image" src={couple.src}></img>
             <div className="testimonial-meta">
               <p className="testimonial-text">
-                “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt
-                & tryggt alternativ”. Vi är mycket nöjda”.
+                Vi valde att hyra ut via Kollektiva eftersom det är ett enkelt
+                och tryggt alternativ. Vi är väldigt nöjda så här långt!
               </p>
-              <h5>Eva & Gösta Persson</h5>
+              <h5>– Peter & Anita Svensson</h5>
               <div className="stars">
                 <BsFillStarFill size="14px" color="#23449B" />
                 <BsFillStarFill size="14px" color="#23449B" />
