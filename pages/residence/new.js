@@ -100,7 +100,7 @@ export default function Home({ user }) {
             "image/",
             ""
           )}`;
-          const path = `${user.id}/${r.data[0].id}/${filename}`;
+          const path = `${user.id}/${hashids.encode(r.data[0].id)}/${filename}`;
           const imageUpload = await supabase.storage
             .from("residence")
             .upload(path, image);
@@ -184,14 +184,16 @@ Home.getLayout = function getLayout(page) {
 export async function getServerSideProps({ req }) {
   const { data, user, error } = await supabase.auth.api.getUserByCookie(req);
 
-  if (!user) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+  console.log("user", user);
+
+  // if (!user) {
+  //   return {
+  //     redirect: {
+  //       destination: "/login",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   return {
     props: {

@@ -1,8 +1,28 @@
 import heroimagemobile from "../assets/heroimagemobile.png";
 import couple from "../assets/couple.png";
 import { supabase } from "../utils/initSupabase";
+import { useState, useEffect } from "react";
 
 export default function Index({}) {
+  const [user, setUser] = useState(supabase.auth.user() || null);
+
+  useEffect(() => {
+    supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log("auth state changed");
+      let newUser = supabase.auth.user();
+      if (newUser) {
+        await fetch("/api/auth/set", {
+          method: "POST",
+          headers: new Headers({ "Content-Type": "application/json" }),
+          credentials: "same-origin",
+          body: JSON.stringify({ event, session }),
+        });
+      }
+
+      setUser(supabase.auth.user() || null);
+    });
+  }, []);
+
   return (
     <div>
       <div className="hero">
