@@ -1,4 +1,10 @@
 import heroimagemobile from "../assets/heroimagemobile.png";
+import heroimagelandscape from "../assets/heroimagelandscape.jpeg";
+import easy_check from "../assets/icons/easy_check.svg";
+import safe_check from "../assets/icons/safe_check.svg";
+import terms_check from "../assets/icons/terms_check.svg";
+import logotype from "../assets/icons/logotype.svg";
+
 import couple from "../assets/couple.png";
 import { supabase } from "../utils/initSupabase";
 import { useState, useEffect } from "react";
@@ -36,31 +42,34 @@ export default function Index({}) {
       <div className="reason-container col-10">
         <h3 className="title">Varför Kollektiva?</h3>
         <div className="reason">
+          <img className="check" src={terms_check.src}></img>
           <h5>1. På dina villkor</h5>
           <p className="reason-text">
-            Kollektiva ger dig friheten att göra det du vill utan att behöva
-            släppa tryggheten.
+            Kollektiva ger dig friheten att välja den boendesituation som passar
+            dig bäst idag och i framtiden.
           </p>
         </div>
         <div className="reason">
-          <h5>2. Tryggt</h5>
+          <img className="check" src={safe_check.src}></img>
+          <h5>2. Ett tryggt val</h5>
           <p className="reason-text">
-            Kollektiva erbjuder säker uthyrning, alla som hyr och hyr ut behöver
-            bekräfta sin identitet.
+            Alla parter måste verifiera sig samt signera samtliga avtal genom
+            Kollektiva. Vi jobbar aktivt för att säkerställa kontakt med seriösa
+            och bra hyresgäster.
           </p>
         </div>
         <div className="reason">
-          <h5>3. Lätt att använda</h5>
+          <img className="check" src={easy_check.src}></img>
+          <h5>3. Enkelt att använda</h5>
           <p className="reason-text last">
-            Kollektiva erbjuder det smidigaste och enklaste sättet att hyra ut.
+            Kollektiva erbjuder en enkel och användarvänlig tjänst för
+            långtidsuthyrning av småhus.
           </p>
         </div>
       </div>
       <div className="quote-container">
         <p className="quote">
-          “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet.”
+          “Det trygga och enkla valet för dig som vill hyra ut din bostad.”
         </p>
       </div>
       <div className="latest-ads col-10">
@@ -72,8 +81,8 @@ export default function Index({}) {
         <img className="couple-image" src={couple.src}></img>
         <h5>Eva & Gösta Persson</h5>
         <p className="testimonial-text">
-          Vi valde att hyra ut via Kollektiva eftersom det är ett enkelt och
-          tryggt alternativ. Vi är väldigt nöjda så här långt!
+          “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt &
+          tryggt alternativ”. Vi är mycket nöjda”.
         </p>
       </div>
     </div>

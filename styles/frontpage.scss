@@ -18,6 +18,19 @@ h5 {
   font-size: 22px;
 }
 
+.reason-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.check {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .reason-text {
   font-style: italic;
 }
