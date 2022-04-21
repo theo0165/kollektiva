@@ -1,7 +1,7 @@
 import styles from "../styles/Residence.module.scss";
 import {
-  BsArrowRightShort,
-  BsArrowLeftShort,
+  BsFillArrowRightCircleFill,
+  BsFillArrowLeftCircleFill,
   BsHouseDoorFill,
   BsTrash,
 } from "react-icons/bs";
@@ -20,8 +20,9 @@ import bathtubIcon from "../assets/icons/bathtub.svg";
 import garageIcon from "../assets/icons/garage.svg";
 import parkingIcon from "../assets/icons/parking.svg";
 import furnaceIcon from "../assets/icons/furnace.svg";
+import AliceCarousel from "react-alice-carousel";
 
-const Residence = ({ data, isPreview, setStep }) => {
+const Residence = ({ data, images, isPreview, setStep }) => {
   const addressArray = formatAddress(data.address);
 
   const heating = () => {
@@ -36,6 +37,8 @@ const Residence = ({ data, isPreview, setStep }) => {
         return "Radiatorvärme";
     }
   };
+
+  const handleDragStart = (e) => e.preventDefault();
 
   return (
     <div className="col-10">
@@ -59,15 +62,29 @@ const Residence = ({ data, isPreview, setStep }) => {
       <div className={`${styles.imageContainer} ${styles.section}`}>
         <div>
           <div className={styles.imageSlider}>
-            <img src="https://via.placeholder.com/410x310" />
+            <AliceCarousel
+              disableDotsControls
+              disableButtonsControls
+              infinite
+              autoPlay
+              autoPlayInterval={3000}
+              items={images.map((image, index) => (
+                <img
+                  src={URL.createObjectURL(image)}
+                  key={`image-${index}`}
+                  className={styles.image}
+                  handleDragStart={handleDragStart}
+                />
+              ))}
+            />
           </div>
           <div className={styles.sliderControls}>
             <div className={styles.sliderButton}>
-              <BsArrowLeftShort />
+              <BsFillArrowLeftCircleFill size="40px" color="#23449B" />
             </div>
-            <div className={styles.sliderNumbers}>1/10</div>
+            <div className={styles.sliderNumbers}>{`1/${images.length}`}</div>
             <div className={styles.sliderButton}>
-              <BsArrowRightShort />
+              <BsFillArrowRightCircleFill size="40px" color="#23449B" />
             </div>
           </div>
           <p className={styles.description}>{data.description}</p>
@@ -75,7 +92,7 @@ const Residence = ({ data, isPreview, setStep }) => {
       </div>
       {isPreview && (
         <button onClick={() => setStep(10)} className={styles.button}>
-          Ändra bilder & beskrivning
+          Ändra bilder {"&"} beskrivning
         </button>
       )}
       <div className={styles.section}>

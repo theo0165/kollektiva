@@ -98,7 +98,12 @@ export default function NewResidence({
       );
     case 13:
       return (
-        <Preview state={state} handleChange={handleChange} setStep={setStep} />
+        <Preview
+          state={state}
+          images={images}
+          handleChange={handleChange}
+          setStep={setStep}
+        />
       );
     default:
   }
