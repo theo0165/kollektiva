@@ -4,6 +4,9 @@ import { supabase } from "../../utils/initSupabase";
 
 const SingleResidence = ({ data, images, user, error }) => {
   console.log(data, images, user, error);
+
+  if (error) return <h1>Något gick fel, försök igen senare</h1>;
+
   return (
     <>
       <Residence data={data} images={images} isPreview={false} />
@@ -18,6 +21,12 @@ export const getServerSideProps = async ({ req, res, query }) => {
     .from("residence")
     .select()
     .eq("id", hashids.decode(query.slug)[0]);
+
+  if (data.error) {
+    return {
+      notFound: true,
+    };
+  }
 
   const images = await supabase
     .from("images")
