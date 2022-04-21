@@ -37,59 +37,63 @@ export default function Index({}) {
         <h2 className="hero-title">
           Hyra ut din bostad? <br></br> Vi hjälper dig!
         </h2>
-        <p className="hero-text">
-          Med Kollektiva är det tryggt och enkelt att hyra ut — delar av eller
-          hela din bostad
-        </p>
-        <button className="btn btn-primary">Skapa annons</button>
+        <div className="hero-text-container">
+          <p className="hero-text">
+            Med Kollektiva är det tryggt och enkelt att hyra ut — delar av eller
+            hela din bostad
+          </p>
+          <button className="btn btn-primary">Skapa annons</button>
+        </div>
       </div>
-      <h3 className="title col-10">Varför ska du välja Kollektiva?</h3>
+      <div className="content">
+        <h3 className="title col-10">Varför ska du välja Kollektiva?</h3>
 
-      <div className="reason-container col-10">
-        <div className="reason">
-          <img className="check" src={terms_check.src}></img>
-          <h5>1. På dina villkor</h5>
-          <p className="reason-text">
-            Kollektiva ger dig friheten att välja den boendesituation som passar
-            dig bäst idag och i framtiden.
+        <div className="reason-container col-10">
+          <div className="reason">
+            <img className="check" src={terms_check.src}></img>
+            <h5>1. På dina villkor</h5>
+            <p className="reason-text">
+              Kollektiva ger dig friheten att välja den boendesituation som
+              passar dig bäst idag och i framtiden.
+            </p>
+          </div>
+          <div className="reason">
+            <img className="check" src={safe_check.src}></img>
+            <h5>2. Ett tryggt val</h5>
+            <p className="reason-text">
+              Alla parter måste verifiera sig samt signera samtliga avtal genom
+              Kollektiva. Vi jobbar aktivt för att säkerställa kontakt med
+              seriösa och bra hyresgäster.
+            </p>
+          </div>
+          <div className="reason">
+            <img className="check" src={easy_check.src}></img>
+            <h5>3. Enkelt att använda</h5>
+            <p className="reason-text last">
+              Kollektiva erbjuder en enkel och användarvänlig tjänst för
+              långtidsuthyrning av småhus.
+            </p>
+          </div>
+        </div>
+        <div className="quote-container">
+          <p className="quote">
+            “Det trygga och enkla valet för dig som vill hyra ut din bostad.”
+          </p>
+          <img className="qoute-logo" src={logotype.src}></img>
+        </div>
+        <div className="latest-ads col-10">
+          <h4>Senaste annonserna</h4>
+          <div className="carousel"></div>
+          <button className="btn btn-primary">Se fler annonser</button>
+        </div>
+        <div className="col-10 testimonial">
+          <img className="couple-image" src={couple.src}></img>
+          <h5>Eva & Gösta Persson</h5>
+          <p className="testimonial-text">
+            “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt &
+            tryggt alternativ”. Vi är mycket nöjda”.
           </p>
         </div>
-        <div className="reason">
-          <img className="check" src={safe_check.src}></img>
-          <h5>2. Ett tryggt val</h5>
-          <p className="reason-text">
-            Alla parter måste verifiera sig samt signera samtliga avtal genom
-            Kollektiva. Vi jobbar aktivt för att säkerställa kontakt med seriösa
-            och bra hyresgäster.
-          </p>
-        </div>
-        <div className="reason">
-          <img className="check" src={easy_check.src}></img>
-          <h5>3. Enkelt att använda</h5>
-          <p className="reason-text last">
-            Kollektiva erbjuder en enkel och användarvänlig tjänst för
-            långtidsuthyrning av småhus.
-          </p>
-        </div>
-      </div>
-      <div className="quote-container">
-        <p className="quote">
-          “Det trygga och enkla valet för dig som vill hyra ut din bostad.”
-        </p>
-        <img className="qoute-logo" src={logotype.src}></img>
-      </div>
-      <div className="latest-ads col-10">
-        <h4>Senaste annonserna</h4>
-        <div className="carousel"></div>
-        <button className="btn btn-primary">Se fler annonser</button>
-      </div>
-      <div className="col-10 testimonial">
-        <img className="couple-image" src={couple.src}></img>
-        <h5>Eva & Gösta Persson</h5>
-        <p className="testimonial-text">
-          “Vi valde att hyra ut via Kollektiva eftersom det var ett enkelt &
-          tryggt alternativ”. Vi är mycket nöjda”.
-        </p>
       </div>
     </div>
   );

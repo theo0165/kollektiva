@@ -2,13 +2,58 @@
 
 .hero-landscape {
   display: none;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (min-width: 390px) {
+    display: block;
+  }
 }
-.hero-text {
-  color: white;
+
+.hero-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: 390px) {
+    display: block;
+  }
 }
-.hero-title {
-  color: $primaryBlue;
+
+.hero {
+  position: relative;
+
+  .hero-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .hero-title {
+    color: $primaryBlue;
+    position: absolute;
+    top: 32px;
+    left: 24px;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .hero-text-container {
+    position: absolute;
+    bottom: calc(48px + 18px);
+    left: 24px;
+  }
+
+  button {
+    margin-top: 16px;
+    padding: 12.5px 32px;
+    font-size: 24px;
+    font-weight: 600;
+  }
 }
+
 .quote {
   color: white;
   padding: 30px;
@@ -89,12 +134,16 @@ h5 {
     grid-gap: 70px;
     align-items: start;
   }
-  .hero-landscape {
-    display: block;
-    width: 100%;
-    height: 40%;
-  }
-  .hero-mobile {
-    display: none;
+}
+
+.content {
+  transform: translateY(-18px);
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  .title {
+    padding: 32px 0;
+    margin: 0;
   }
 }
