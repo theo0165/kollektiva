@@ -1,9 +1,30 @@
 @import "./variables/variables.scss";
 
+.hero-landscape {
+  display: none;
+}
+.hero-text {
+  color: white;
+}
+.hero-title {
+  color: $primaryBlue;
+}
 .quote {
-  background: $primaryBlue;
   color: white;
   padding: 30px;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-style: italic;
+  font-size: large;
+}
+.quote-container {
+  text-align: center;
+  background: $primaryBlue;
+  padding-bottom: 20px;
+}
+
+.quote-logo {
+  margin-bottom: 30px;
 }
 
 .title {
@@ -58,4 +79,22 @@ h5 {
 .testimonial-text {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  .reason-container {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 70px;
+    align-items: start;
+  }
+  .hero-landscape {
+    display: block;
+    width: 100%;
+    height: 40%;
+  }
+  .hero-mobile {
+    display: none;
+  }
 }
