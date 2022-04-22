@@ -26,7 +26,7 @@ const Footer = ({ pushBottom }) => {
             <li>Se annonser</li>
             <li>
               <Link href="/residence/new">
-                <a>Skapa konto</a>
+                <a>Skapa annons</a>
               </Link>
             </li>
           </ul>
